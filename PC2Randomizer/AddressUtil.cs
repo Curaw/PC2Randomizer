@@ -31,12 +31,12 @@ namespace PC2Randomizer
 
         //Player
         public static string PLAYER_MONEY = NAME_OF_EXE + "+0x17BCD8";
-        public static string PLAYER_EINKAEUFER = NAME_OF_EXE + "+0x17BCE0"; //TODO english
+        public static string PLAYER_BUYER = NAME_OF_EXE + "+0x17BCE0";
         public static string PLAYER_GANGSTER = NAME_OF_EXE + "+0x17BCE4";
-        public static string PLAYER_FACHKRAFT = NAME_OF_EXE + "+0x17BCE8";
-        public static string PLAYER_POLITIKER = NAME_OF_EXE + "+0x17BCEC";
-        public static string PLAYER_VERKAEUFER = NAME_OF_EXE + "+0x17BCF0";
-        public static string PLAYER_WACHE = NAME_OF_EXE + "+0x17BCF4";
+        public static string PLAYER_SPECIALIST = NAME_OF_EXE + "+0x17BCE8";
+        public static string PLAYER_POLITICIAN = NAME_OF_EXE + "+0x17BCEC";
+        public static string PLAYER_SELLER = NAME_OF_EXE + "+0x17BCF0";
+        public static string PLAYER_GUARD = NAME_OF_EXE + "+0x17BCF4";
 
         //Enemy 1
         public static string ENEMY_1 = NAME_OF_EXE + "+0x17BDD4";
@@ -50,12 +50,12 @@ namespace PC2Randomizer
         public static string ENEMY_1_MOUTH = NAME_OF_EXE + "+0x17BDC4";
         public static string ENEMY_1_CHIN = NAME_OF_EXE + "+0x17BDC8";
         public static string ENEMY_1_MONEY = NAME_OF_EXE + "+0x17BD98";
-        public static string ENEMY_1_EINKAEUFER = NAME_OF_EXE + "+0x17BDA0";
+        public static string ENEMY_1_BUYER = NAME_OF_EXE + "+0x17BDA0";
         public static string ENEMY_1_GANGSTER = NAME_OF_EXE + "+0x17BDA4";
-        public static string ENEMY_1_FACHKRAFT = NAME_OF_EXE + "+0x17BDA8";
-        public static string ENEMY_1_POLITIKER = NAME_OF_EXE + "+0x17BDAC";
-        public static string ENEMY_1_VERKAEUFER = NAME_OF_EXE + "+0x17BDB0";
-        public static string ENEMY_1_WACHE = NAME_OF_EXE + "+0x17BDB4";
+        public static string ENEMY_1_SPECIALIST = NAME_OF_EXE + "+0x17BDA8";
+        public static string ENEMY_1_POLITICIAN = NAME_OF_EXE + "+0x17BDAC";
+        public static string ENEMY_1_SELLER = NAME_OF_EXE + "+0x17BDB0";
+        public static string ENEMY_1_GUARD = NAME_OF_EXE + "+0x17BDB4";
         public static string ENEMY_1_STATS = NAME_OF_EXE + "+0x17BD9C";
         //Enemy 2
         public static string ENEMY_2 = NAME_OF_EXE + "+0x17BE94";
@@ -69,12 +69,12 @@ namespace PC2Randomizer
         public static string ENEMY_2_MOUTH = NAME_OF_EXE + "+0x17BE84";
         public static string ENEMY_2_CHIN = NAME_OF_EXE + "+0x17BE88";
         public static string ENEMY_2_MONEY = NAME_OF_EXE + "+0x17BE58";
-        public static string ENEMY_2_EINKAEUFER = NAME_OF_EXE + "+0x17BE60";
+        public static string ENEMY_2_BUYER = NAME_OF_EXE + "+0x17BE60";
         public static string ENEMY_2_GANGSTER = NAME_OF_EXE + "+0x17BE64";
-        public static string ENEMY_2_FACHKRAFT = NAME_OF_EXE + "+0x17BE68";
-        public static string ENEMY_2_POLITIKER = NAME_OF_EXE + "+0x17BE6C";
-        public static string ENEMY_2_VERKAEUFER = NAME_OF_EXE + "+0x17BE70";
-        public static string ENEMY_2_WACHE = NAME_OF_EXE + "+0x17BE74";
+        public static string ENEMY_2_SPECIALIST = NAME_OF_EXE + "+0x17BE68";
+        public static string ENEMY_2_POLITICIAN = NAME_OF_EXE + "+0x17BE6C";
+        public static string ENEMY_2_SELLER = NAME_OF_EXE + "+0x17BE70";
+        public static string ENEMY_2_GUARD = NAME_OF_EXE + "+0x17BE74";
         public static string ENEMY_2_STATS = NAME_OF_EXE + "+0x17BE5C";
         //Enemy 3
         public static string ENEMY_3 = NAME_OF_EXE + "+0x17BF54";
@@ -88,12 +88,12 @@ namespace PC2Randomizer
         public static string ENEMY_3_MOUTH = NAME_OF_EXE + "+0x17BF44";
         public static string ENEMY_3_CHIN = NAME_OF_EXE + "+0x17BF48";
         public static string ENEMY_3_MONEY = NAME_OF_EXE + "+0x17BF18";
-        public static string ENEMY_3_EINKAEUFER = NAME_OF_EXE + "+0x17BF20";
+        public static string ENEMY_3_BUYER = NAME_OF_EXE + "+0x17BF20";
         public static string ENEMY_3_GANGSTER = NAME_OF_EXE + "+0x17BF24";
-        public static string ENEMY_3_FACHKRAFT = NAME_OF_EXE + "+0x17BF28";
-        public static string ENEMY_3_POLITIKER = NAME_OF_EXE + "+0x17BF2C";
-        public static string ENEMY_3_VERKAEUFER = NAME_OF_EXE + "+0x17BF30";
-        public static string ENEMY_3_WACHE = NAME_OF_EXE + "+0x17BF34";
+        public static string ENEMY_3_SPECIALIST = NAME_OF_EXE + "+0x17BF28";
+        public static string ENEMY_3_POLITICIAN = NAME_OF_EXE + "+0x17BF2C";
+        public static string ENEMY_3_SELLER = NAME_OF_EXE + "+0x17BF30";
+        public static string ENEMY_3_GUARD = NAME_OF_EXE + "+0x17BF34";
         public static string ENEMY_3_STATS = NAME_OF_EXE + "+0x17BF1C";
         //Enemy 4
         public static string ENEMY_4 = NAME_OF_EXE + "+0x17C014";
@@ -107,12 +107,12 @@ namespace PC2Randomizer
         public static string ENEMY_4_MOUTH = NAME_OF_EXE + "+0x17BF44";
         public static string ENEMY_4_CHIN = NAME_OF_EXE + "+0x17BF48";
         public static string ENEMY_4_MONEY = NAME_OF_EXE + "+0x17BFD8";
-        public static string ENEMY_4_EINKAEUFER = NAME_OF_EXE + "+0x17BFE0";
-        public static string ENEMY_4_GANGSTER = NAME_OF_EXE + "+0x17BFENEMY_4_";
-        public static string ENEMY_4_FACHKRAFT = NAME_OF_EXE + "+0x17BFE8";
-        public static string ENEMY_4_POLITIKER = NAME_OF_EXE + "+0x17BFEC";
-        public static string ENEMY_4_VERKAEUFER = NAME_OF_EXE + "+0x17BFF0";
-        public static string ENEMY_4_WACHE = NAME_OF_EXE + "+0x17BFF4";
+        public static string ENEMY_4_BUYER = NAME_OF_EXE + "+0x17BFE0";
+        public static string ENEMY_4_GANGSTER = NAME_OF_EXE + "+0x17BFE4";
+        public static string ENEMY_4_SPECIALIST = NAME_OF_EXE + "+0x17BFE8";
+        public static string ENEMY_4_POLITICIAN = NAME_OF_EXE + "+0x17BFEC";
+        public static string ENEMY_4_SELLER = NAME_OF_EXE + "+0x17BFF0";
+        public static string ENEMY_4_GUARD = NAME_OF_EXE + "+0x17BFF4";
         public static string ENEMY_4_STATS = NAME_OF_EXE + "+0x17BFDC";
         //Enemy 5
         public static string ENEMY_5 = NAME_OF_EXE + "+0x17C0D4";
@@ -126,12 +126,12 @@ namespace PC2Randomizer
         public static string ENEMY_5_MOUTH = NAME_OF_EXE + "+0x17C0C4";
         public static string ENEMY_5_CHIN = NAME_OF_EXE + "+0x17C0C8";
         public static string ENEMY_5_MONEY = NAME_OF_EXE + "+0x17C098";
-        public static string ENEMY_5_EINKAEUFER = NAME_OF_EXE + "+0x17C0A0";
+        public static string ENEMY_5_BUYER = NAME_OF_EXE + "+0x17C0A0";
         public static string ENEMY_5_GANGSTER = NAME_OF_EXE + "+0x17C0A4";
-        public static string ENEMY_5_FACHKRAFT = NAME_OF_EXE + "+0x17C0A8";
-        public static string ENEMY_5_POLITIKER = NAME_OF_EXE + "+0x17C0AC";
-        public static string ENEMY_5_VERKAEUFER = NAME_OF_EXE + "+0x17C0B0";
-        public static string ENEMY_5_WACHE = NAME_OF_EXE + "+0x17C0B4";
+        public static string ENEMY_5_SPECIALIST = NAME_OF_EXE + "+0x17C0A8";
+        public static string ENEMY_5_POLITICIAN = NAME_OF_EXE + "+0x17C0AC";
+        public static string ENEMY_5_SELLER = NAME_OF_EXE + "+0x17C0B0";
+        public static string ENEMY_5_GUARD = NAME_OF_EXE + "+0x17C0B4";
         public static string ENEMY_5_STATS = NAME_OF_EXE + "+0x17C09C";
     }
 }

@@ -12,7 +12,7 @@ namespace PC2Randomizer
         const string emptySettingsString = "0;0;0;0;False;0;10;False;False;0;0;10;False;False;0;False;0,10;False;False;False;False;0,10;False;0,10;0,10;0,10;0,10;100;False;0;0;False;False;False;0;0;False;False;False;0;0;0;100;False;False;0;0;False;0;0;False;False;0;0;False;False;0;0;100;False;0;0;False;0;False;0;False;0;0;False;False;False;100;False;0;0;0;0;False;0;False;0;False;False;False;0;0;False;100;False;0;0;0;0;False;0;False;False;0;False;False;False;0;0;100;False;0;0;0;0;False;False;0;False;False;False;False;0;0;0;100;False;0;0;";
 
 
-
+        bool forceNoMissions = false;   //TODO: is this needed?
         int creditProgress = 0;
         Mem mrmy = new Mem();
         int PID = 0;
@@ -22,7 +22,6 @@ namespace PC2Randomizer
         decimal oldPopulation;
         int buildingsAndMissions = 0;
         int maxHQ = 0;
-        bool forceNoMissions = false;   //TODO: missionen abschalten, passiert aber automatisch bei 0 gegnern also gg
         int enemyAmount = 0;
         string[] settings = new string[125];
 
@@ -33,12 +32,14 @@ namespace PC2Randomizer
             InitializeComponent();
         }
 
+        //After starting the application
         private void Form1_Load(object sender, EventArgs e)
         {
             memberOldVals();
             fillComboBoxes();
         }
 
+        //This method defaults selection on every Combobox to index 0
         private void fillComboBoxes()
         {
             foreach (TabPage page in tabControl.TabPages) {
@@ -154,9 +155,11 @@ namespace PC2Randomizer
             }
         }
 
+        //This hooks itself onto the process named "fastfood2" and starts our freegame-timer
+        //see tmrFreegame_Tick for further information
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            PID = mrmy.GetProcIdFromName("fastfood2");  //TODO: fastfood2 auf pc2 vermutlich für die alte CD-Version
+            PID = mrmy.GetProcIdFromName("fastfood2");  //TODO: fastfood2 would be pc2 for the old CD-Version
             if (PID > 0)
             {
                 mrmy.OpenProcess(PID);
@@ -169,6 +172,9 @@ namespace PC2Randomizer
             }
         }
 
+        //This method tries to read the chosen timelimit from the "freegame" menu on every timer tick.
+        //If it succeeds, then the player is inside the "freegame" menu and we can start changing all values
+        //If it did not succeed, then the player must still be in the main menu of the game
         private void tmrFreegame_Tick(object sender, EventArgs e)
         {
             int timeLimit = mrmy.ReadInt(AddressUtil.TIMELIMIT);
@@ -180,6 +186,7 @@ namespace PC2Randomizer
                     randomizeAll();
                     System.Media.SystemSounds.Asterisk.Play();
                     readyToStartGame = true;
+                    //See tmrIngame_tick for further information
                     tmrIngame.Start();
                     lblInfo.Text = "Everything set. Start the game now!";
                 }
@@ -192,11 +199,13 @@ namespace PC2Randomizer
             }
         }
 
+        //TODO: Why is this here?
         private void resetValues()
         {
             buildingsAndMissions = 0;
         }
 
+        //When the player is in the "freegame" menu, all settings are locked
         private void deactivateUI()
         {
             foreach (Control currControl in this.Controls)
@@ -209,6 +218,7 @@ namespace PC2Randomizer
             }
         }
 
+        //As soon as the player comes back to the main menu, we unlock the settings
         private void activateUI()
         {
             foreach (Control currControl in this.Controls)
@@ -283,24 +293,24 @@ namespace PC2Randomizer
             //EinkaeuferE1
             if (chkEinkaeuferE1.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_EINKAEUFER, "int", nmrcEinkaeuferE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_BUYER, "int", nmrcEinkaeuferE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Einkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_EINKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_BUYER, "int", n.ToString());
             }
             //PolitikerE1
             if (chkPolitikerE1.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_POLITIKER, "int", nmrcPolitikerE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_POLITICIAN, "int", nmrcPolitikerE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Politiker: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_POLITIKER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_POLITICIAN, "int", n.ToString());
             }
             //GangsterE1
             if (chkGangsterE1.Checked)
@@ -316,35 +326,35 @@ namespace PC2Randomizer
             //VerkaeuferE1
             if (chkVerkaeuferE1.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_VERKAEUFER, "int", nmrcVerkaeuferE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_SELLER, "int", nmrcVerkaeuferE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Verkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_VERKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_SELLER, "int", n.ToString());
             }
             //FachkraftE1
             if (chkFachkraftE1.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_FACHKRAFT, "int", nmrcFachkraftE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_SPECIALIST, "int", nmrcFachkraftE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Fachkraft: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_FACHKRAFT, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_SPECIALIST, "int", n.ToString());
             }
             //WacheE1
             if (chkWacheE1.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_WACHE, "int", nmrcWacheE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_GUARD, "int", nmrcWacheE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Wache: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_1_WACHE, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_GUARD, "int", n.ToString());
             }
 
             //MoneyE2
@@ -361,24 +371,24 @@ namespace PC2Randomizer
             //EinkaeuferE2
             if (chkEinkaeuferE2.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_EINKAEUFER, "int", nmrcEinkaeuferE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_BUYER, "int", nmrcEinkaeuferE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Einkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_EINKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_BUYER, "int", n.ToString());
             }
             //PolitikerE2
             if (chkPolitikerE2.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_POLITIKER, "int", nmrcPolitikerE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_POLITICIAN, "int", nmrcPolitikerE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Politiker: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_POLITIKER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_POLITICIAN, "int", n.ToString());
             }
             //GangsterE2
             if (chkGangsterE2.Checked)
@@ -394,35 +404,35 @@ namespace PC2Randomizer
             //VerkaeuferE2
             if (chkVerkaeuferE2.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_VERKAEUFER, "int", nmrcVerkaeuferE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_SELLER, "int", nmrcVerkaeuferE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Verkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_VERKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_SELLER, "int", n.ToString());
             }
             //FachkraftE2
             if (chkFachkraftE2.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_FACHKRAFT, "int", nmrcFachkraftE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_SPECIALIST, "int", nmrcFachkraftE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Fachkraft: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_FACHKRAFT, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_SPECIALIST, "int", n.ToString());
             }
             //WacheE2
             if (chkWacheE2.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_WACHE, "int", nmrcWacheE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_GUARD, "int", nmrcWacheE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Wache: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_2_WACHE, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_GUARD, "int", n.ToString());
             }
 
             //MoneyE3
@@ -439,24 +449,24 @@ namespace PC2Randomizer
             //EinkaeuferE3
             if (chkEinkaeuferE3.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_EINKAEUFER, "int", nmrcEinkaeuferE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_BUYER, "int", nmrcEinkaeuferE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Einkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_EINKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_BUYER, "int", n.ToString());
             }
             //PolitikerE3
             if (chkPolitikerE3.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_POLITIKER, "int", nmrcPolitikerE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_POLITICIAN, "int", nmrcPolitikerE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Politiker: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_POLITIKER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_POLITICIAN, "int", n.ToString());
             }
             //GangsterE3
             if (chkGangsterE3.Checked)
@@ -472,35 +482,35 @@ namespace PC2Randomizer
             //VerkaeuferE3
             if (chkVerkaeuferE3.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_VERKAEUFER, "int", nmrcVerkaeuferE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_SELLER, "int", nmrcVerkaeuferE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Verkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_VERKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_SELLER, "int", n.ToString());
             }
             //FachkraftE3
             if (chkFachkraftE3.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_FACHKRAFT, "int", nmrcFachkraftE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_SPECIALIST, "int", nmrcFachkraftE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Fachkraft: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_FACHKRAFT, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_SPECIALIST, "int", n.ToString());
             }
             //WacheE3
             if (chkWacheE3.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_WACHE, "int", nmrcWacheE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_GUARD, "int", nmrcWacheE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Wache: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_3_WACHE, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_GUARD, "int", n.ToString());
             }
 
             //MoneyE4
@@ -517,24 +527,24 @@ namespace PC2Randomizer
             //EinkaeuferE4
             if (chkEinkaeuferE4.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_EINKAEUFER, "int", nmrcEinkaeuferE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_BUYER, "int", nmrcEinkaeuferE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Einkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_EINKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_BUYER, "int", n.ToString());
             }
             //PolitikerE4
             if (chkPolitikerE4.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_POLITIKER, "int", nmrcPolitikerE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_POLITICIAN, "int", nmrcPolitikerE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Politiker: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_POLITIKER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_POLITICIAN, "int", n.ToString());
             }
             //GangsterE4
             if (chkGangsterE4.Checked)
@@ -550,35 +560,35 @@ namespace PC2Randomizer
             //VerkaeuferE4
             if (chkVerkaeuferE4.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_VERKAEUFER, "int", nmrcVerkaeuferE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_SELLER, "int", nmrcVerkaeuferE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Verkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_VERKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_SELLER, "int", n.ToString());
             }
             //FachkraftE4
             if (chkFachkraftE4.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_FACHKRAFT, "int", nmrcFachkraftE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_SPECIALIST, "int", nmrcFachkraftE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Fachkraft: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_FACHKRAFT, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_SPECIALIST, "int", n.ToString());
             }
             //WacheE4
             if (chkWacheE4.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_WACHE, "int", nmrcWacheE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_GUARD, "int", nmrcWacheE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Wache: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_4_WACHE, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_GUARD, "int", n.ToString());
             }
 
             //MoneyE5
@@ -595,24 +605,24 @@ namespace PC2Randomizer
             //EinkaeuferE5
             if (chkEinkaeuferE5.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_EINKAEUFER, "int", nmrcEinkaeuferE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_BUYER, "int", nmrcEinkaeuferE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Einkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_EINKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_BUYER, "int", n.ToString());
             }
             //PolitikerE5
             if (chkPolitikerE5.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_POLITIKER, "int", nmrcPolitikerE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_POLITICIAN, "int", nmrcPolitikerE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Politiker: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_POLITIKER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_POLITICIAN, "int", n.ToString());
             }
             //GangsterE5
             if (chkGangsterE5.Checked)
@@ -628,35 +638,35 @@ namespace PC2Randomizer
             //VerkaeuferE5
             if (chkVerkaeuferE5.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_VERKAEUFER, "int", nmrcVerkaeuferE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_SELLER, "int", nmrcVerkaeuferE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Verkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_VERKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_SELLER, "int", n.ToString());
             }
             //FachkraftE5
             if (chkFachkraftE5.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_FACHKRAFT, "int", nmrcFachkraftE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_SPECIALIST, "int", nmrcFachkraftE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Fachkraft: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_FACHKRAFT, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_SPECIALIST, "int", n.ToString());
             }
             //WacheE5
             if (chkWacheE5.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_WACHE, "int", nmrcWacheE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_GUARD, "int", nmrcWacheE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Wache: " + n);
-                mrmy.WriteMemory(AddressUtil.ENEMY_5_WACHE, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_GUARD, "int", n.ToString());
             }
         }
 
@@ -675,24 +685,24 @@ namespace PC2Randomizer
             //Einkaeufer
             if (chkEinkaeuferSelf.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.PLAYER_EINKAEUFER, "int", nmrcEinkaeuferSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_BUYER, "int", nmrcEinkaeuferSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Einkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.PLAYER_EINKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_BUYER, "int", n.ToString());
             }
             //Politiker
             if (chkPolitikerSelf.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.PLAYER_POLITIKER, "int", nmrcPolitikerSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_POLITICIAN, "int", nmrcPolitikerSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Politiker: " + n);
-                mrmy.WriteMemory(AddressUtil.PLAYER_POLITIKER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_POLITICIAN, "int", n.ToString());
             }
             //Gangster
             if (chkGangsterSelf.Checked)
@@ -708,35 +718,35 @@ namespace PC2Randomizer
             //Verkaeufer
             if (chkVerkaeuferSelf.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.PLAYER_VERKAEUFER, "int", nmrcVerkaeuferSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_SELLER, "int", nmrcVerkaeuferSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Verkaeufer: " + n);
-                mrmy.WriteMemory(AddressUtil.PLAYER_VERKAEUFER, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_SELLER, "int", n.ToString());
             }
             //Fachkraft
             if (chkFachkraftSelf.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.PLAYER_FACHKRAFT, "int", nmrcFachkraftSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_SPECIALIST, "int", nmrcFachkraftSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Fachkraft: " + n);
-                mrmy.WriteMemory(AddressUtil.PLAYER_FACHKRAFT, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_SPECIALIST, "int", n.ToString());
             }
             //Wache
             if (chkWacheSelf.Checked)
             {
-                mrmy.WriteMemory(AddressUtil.PLAYER_WACHE, "int", nmrcWacheSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_GUARD, "int", nmrcWacheSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Wache: " + n);
-                mrmy.WriteMemory(AddressUtil.PLAYER_WACHE, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_GUARD, "int", n.ToString());
             }
         }
 
@@ -801,7 +811,7 @@ namespace PC2Randomizer
             }
         }
 
-        //TODO: Nicht 2 gleiche goals
+        //TODO: Do not have two goals of the same type
         private void randomizeGoals()
         {
             int valueToWrite = 0;
@@ -901,6 +911,7 @@ namespace PC2Randomizer
             }
         }
 
+        //Certain goals need certain options enabled to work (e.g. have your hq on level 6 needs the maxHQ setting set to 6)
         private void fixGoals(int chosenGoal)
         {
             fixHQ6(chosenGoal);
@@ -1130,29 +1141,25 @@ namespace PC2Randomizer
                 mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "0");
                 mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "0");
                 mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "0");
-                forceNoMissions = true;
             }
             enemyAmount = n;
         }
 
         private void randomizeBuildingsAndMission()
         {
-            if(!forceNoMissions)
+            //Missions yes/no
+            if (cmbMissions.SelectedIndex == 0)
             {
-                //Missionen Ja/NEin
-                if (cmbMissions.SelectedIndex == 0)
-                {
-                    int n = rng.Next(0, 2);
-                    Console.WriteLine("Missionen: " + n);
-                    if (n == 1)
-                    {
-                        buildingsAndMissions += 65536;
-                    }
-                }
-                else if (cmbMissions.SelectedIndex == 1)
+                int n = rng.Next(0, 2);
+                Console.WriteLine("Missionen: " + n);
+                if (n == 1)
                 {
                     buildingsAndMissions += 65536;
                 }
+            }
+            else if (cmbMissions.SelectedIndex == 1)
+            {
+                buildingsAndMissions += 65536;
             }
             //Startfiliale Ja/NEin
             if(cmbStartFiliale.SelectedIndex == 0)
@@ -1229,6 +1236,7 @@ namespace PC2Randomizer
             }
         }
 
+        //Easter egg
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
             switch (creditProgress)
@@ -1358,12 +1366,14 @@ namespace PC2Randomizer
             mrmy.WriteMemory(address, "float", value.ToString());
         }
 
+        //This method will be invoked pretty quickly after the player started the game
+        //CityStats can only be changed after the game already started
         private void tmrIngame_Tick(object sender, EventArgs e)
         {
-            //Ganz am Anfang sichergehen, dass der Spieler keine randomStats eingestellt hat
-            //Sonst kann das Game crashen
             setRandomStatsToZero();
 
+            //As soon as we can read the CityStats we know the game started
+            //Then we may change them
             byte[] bytes = mrmy.ReadBytes(AddressUtil.CITY_STATS, 4);
             if(!isGameLoaded())
             {
@@ -1374,6 +1384,8 @@ namespace PC2Randomizer
             tmrIngame.Stop();
         }
 
+        //Having a stat over a certain amount (7, I think) crashes the game
+        //so we have to set random stats to zero
         private void setRandomStatsToZero()
         {
             mrmy.WriteMemory(AddressUtil.ENEMY_1_STATS, "int", "0");
@@ -1385,7 +1397,7 @@ namespace PC2Randomizer
 
         private bool isGameLoaded()
         {
-            //Die Funktion liest den Pointer bis zu den Citystats und wirft bei Fehlern false
+            //This function reads the pointer all the way down to the Citystats and return false when an error occurs
             string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.RENT_OFFSETS);
             if(addressToWrite == "")
             {
