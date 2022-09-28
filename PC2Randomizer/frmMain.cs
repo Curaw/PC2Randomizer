@@ -11,129 +11,7 @@ namespace PC2Randomizer
     {
         const string emptySettingsString = "0;0;0;0;False;0;10;False;False;0;0;10;False;False;0;False;0,10;False;False;False;False;0,10;False;0,10;0,10;0,10;0,10;100;False;0;0;False;False;False;0;0;False;False;False;0;0;0;100;False;False;0;0;False;0;0;False;False;0;0;False;False;0;0;100;False;0;0;False;0;False;0;False;0;0;False;False;False;100;False;0;0;0;0;False;0;False;0;False;False;False;0;0;False;100;False;0;0;0;0;False;0;False;False;0;False;False;False;0;0;100;False;0;0;0;0;False;False;0;False;False;False;False;0;0;0;100;False;0;0;";
 
-        const string POPULATIONADDR = "fastfood2.exe+0x17BB28";
-        const string TIMELIMITADDR = "fastfood2.exe+0x17BB2C";
-        const string CITYNUMBERADDR = "fastfood2.exe+0x17BB40";
-        const string STARTHQYNADDR = "fastfood2.exe+0x17BB34";
-        const string MISSIONBUILDINGYNADDR = "fastfood2.exe+0x17BB3C";
-        const string STARTHQADDR = "fastfood2.exe+0x17BB30";
-        const string MAXHQADDR = "fastfood2.exe+0x17BB38";
-        const string GOAL1ADDR = "fastfood2.exe+0x17BB48";
-        const string GOAL2ADDR = "fastfood2.exe+0x17BB4C";
-        const string GOAL3ADDR = "fastfood2.exe+0x17BB50";
-        const string DIFFICULTYADDR = "fastfood2.exe+0x17BB24";
-        const string CITYSTATSADDR = "fastfood2.exe+0x17C670";
-        readonly string[] RENTOFFSETS = { "8", "0", "8C" };
-        readonly string[] PATIENCEOFFSETS = { "8", "0", "90" };
-        readonly string[] BUYPRICEOFFSETS = { "8", "0", "94" };
-        readonly string[] INCOMEOFFSETS = { "8", "0", "98" };
-        readonly string[] QUALITYOFFSETS = { "8", "0", "9C" };
-        readonly string[] COMFORTOFFSETS = { "8", "0", "A0" };
 
-        //Player
-        const string PLAYERMONEYADDR = "fastfood2.exe+0x17BCD8";
-        const string PLAYEREINKAEUFERADDR = "fastfood2.exe+0x17BCE0";
-        const string PLAYERGANGSTERADDR = "fastfood2.exe+0x17BCE4";
-        const string PLAYERFACHKRAFTADDR = "fastfood2.exe+0x17BCE8";
-        const string PLAYERPOLITIKERADDR = "fastfood2.exe+0x17BCEC";
-        const string PLAYERVERKAEUFERADDR = "fastfood2.exe+0x17BCF0";
-        const string PLAYERWACHEADDR = "fastfood2.exe+0x17BCF4";
-
-        //Enemy 1
-        const string ENEMY1ADDR = "fastfood2.exe+0x17BDD4";
-        const string E1NAMEADDR = "fastfood2.exe+0x17BD18";
-        const string E1COMPANYNAMEADDR = "fastfood2.exe+0x17BD58";
-        const string E1LOGOADDR = "fastfood2.exe+0x17BDCC";
-        const string E1COLORADDR = "fastfood2.exe+0x17BDD0";
-        const string E1GENDERADDR = "fastfood2.exe+0x17BDB8";
-        const string E1HAIRADDR = "fastfood2.exe+0x17BDBC";
-        const string E1EYEADDR = "fastfood2.exe+0x17BDC0";
-        const string E1MOUTHADDR = "fastfood2.exe+0x17BDC4";
-        const string E1CHINADDR = "fastfood2.exe+0x17BDC8";
-        const string E1MONEYADDR = "fastfood2.exe+0x17BD98";
-        const string E1EINKAEUFERADDR = "fastfood2.exe+0x17BDA0";
-        const string E1GANGSTERADDR = "fastfood2.exe+0x17BDA4";
-        const string E1FACHKRAFTADDR = "fastfood2.exe+0x17BDA8";
-        const string E1POLITIKERADDR = "fastfood2.exe+0x17BDAC";
-        const string E1VERKAEUFERADDR = "fastfood2.exe+0x17BDB0";
-        const string E1WACHEADDR = "fastfood2.exe+0x17BDB4";
-        const string E1STATSADDR = "fastfood2.exe+0x17BD9C";
-        //Enemy 2
-        const string ENEMY2ADDR = "fastfood2.exe+0x17BE94";
-        const string E2NAMEADDR = "fastfood2.exe+0x17BDD8";
-        const string E2COMPANYNAMEADDR = "fastfood2.exe+0x17BE18";
-        const string E2LOGOADDR = "fastfood2.exe+0x17BE8C";
-        const string E2COLORADDR = "fastfood2.exe+0x17BE90";
-        const string E2GENDERADDR = "fastfood2.exe+0x17BE78";
-        const string E2HAIRADDR = "fastfood2.exe+0x17BE7C";
-        const string E2EYEADDR = "fastfood2.exe+0x17BE80";
-        const string E2MOUTHADDR = "fastfood2.exe+0x17BE84";
-        const string E2CHINADDR = "fastfood2.exe+0x17BE88";
-        const string E2MONEYADDR = "fastfood2.exe+0x17BE58";
-        const string E2EINKAEUFERADDR = "fastfood2.exe+0x17BE60";
-        const string E2GANGSTERADDR = "fastfood2.exe+0x17BE64";
-        const string E2FACHKRAFTADDR = "fastfood2.exe+0x17BE68";
-        const string E2POLITIKERADDR = "fastfood2.exe+0x17BE6C";
-        const string E2VERKAEUFERADDR = "fastfood2.exe+0x17BE70";
-        const string E2WACHEADDR = "fastfood2.exe+0x17BE74";
-        const string E2STATSADDR = "fastfood2.exe+0x17BE5C";
-        //Enemy 3
-        const string ENEMY3ADDR = "fastfood2.exe+0x17BF54";
-        const string E3NAMEADDR = "fastfood2.exe+0x17BE98";
-        const string E3COMPANYNAMEADDR = "fastfood2.exe+0x17BED8";
-        const string E3LOGOADDR = "fastfood2.exe+0x17BF4C";
-        const string E3COLORADDR = "fastfood2.exe+0x17BF50";
-        const string E3GENDERADDR = "fastfood2.exe+0x17BF38";
-        const string E3HAIRADDR = "fastfood2.exe+0x17BF3C";
-        const string E3EYEADDR = "fastfood2.exe+0x17BF40";
-        const string E3MOUTHADDR = "fastfood2.exe+0x17BF44";
-        const string E3CHINADDR = "fastfood2.exe+0x17BF48";
-        const string E3MONEYADDR = "fastfood2.exe+0x17BF18";
-        const string E3EINKAEUFERADDR = "fastfood2.exe+0x17BF20";
-        const string E3GANGSTERADDR = "fastfood2.exe+0x17BF24";
-        const string E3FACHKRAFTADDR = "fastfood2.exe+0x17BF28";
-        const string E3POLITIKERADDR = "fastfood2.exe+0x17BF2C";
-        const string E3VERKAEUFERADDR = "fastfood2.exe+0x17BF30";
-        const string E3WACHEADDR = "fastfood2.exe+0x17BF34";
-        const string E3STATSADDR = "fastfood2.exe+0x17BF1C";
-        //Enemy 4
-        const string ENEMY4ADDR = "fastfood2.exe+0x17C014";
-        const string E4NAMEADDR = "fastfood2.exe+0x17BF58";
-        const string E4COMPANYNAMEADDR = "fastfood2.exe+0x17BF98";
-        const string E4LOGOADDR = "fastfood2.exe+0x17C00C";
-        const string E4COLORADDR = "fastfood2.exe+0x17C010";
-        const string E4GENDERADDR = "fastfood2.exe+0x17BF38";
-        const string E4HAIRADDR = "fastfood2.exe+0x17BF3C";
-        const string E4EYEADDR = "fastfood2.exe+0x17BF40";
-        const string E4MOUTHADDR = "fastfood2.exe+0x17BF44";
-        const string E4CHINADDR = "fastfood2.exe+0x17BF48";
-        const string E4MONEYADDR = "fastfood2.exe+0x17BFD8";
-        const string E4EINKAEUFERADDR = "fastfood2.exe+0x17BFE0";
-        const string E4GANGSTERADDR = "fastfood2.exe+0x17BFE4";
-        const string E4FACHKRAFTADDR = "fastfood2.exe+0x17BFE8";
-        const string E4POLITIKERADDR = "fastfood2.exe+0x17BFEC";
-        const string E4VERKAEUFERADDR = "fastfood2.exe+0x17BFF0";
-        const string E4WACHEADDR = "fastfood2.exe+0x17BFF4";
-        const string E4STATSADDR = "fastfood2.exe+0x17BFDC";
-        //Enemy 5
-        const string ENEMY5ADDR = "fastfood2.exe+0x17C0D4";
-        const string E5NAMEADDR = "fastfood2.exe+0x17C018";
-        const string E5COMPANYNAMEADDR = "fastfood2.exe+0x17C058";
-        const string E5LOGOADDR = "fastfood2.exe+0x17C0CC";
-        const string E5COLORADDR = "fastfood2.exe+0x17C0D0";
-        const string E5GENDERADDR = "fastfood2.exe+0x17C0B8";
-        const string E5HAIRADDR = "fastfood2.exe+0x17C0BC";
-        const string E5EYEADDR = "fastfood2.exe+0x17C0C0";
-        const string E5MOUTHADDR = "fastfood2.exe+0x17C0C4";
-        const string E5CHINADDR = "fastfood2.exe+0x17C0C8";
-        const string E5MONEYADDR = "fastfood2.exe+0x17C098";
-        const string E5EINKAEUFERADDR = "fastfood2.exe+0x17C0A0";
-        const string E5GANGSTERADDR = "fastfood2.exe+0x17C0A4";
-        const string E5FACHKRAFTADDR = "fastfood2.exe+0x17C0A8";
-        const string E5POLITIKERADDR = "fastfood2.exe+0x17C0AC";
-        const string E5VERKAEUFERADDR = "fastfood2.exe+0x17C0B0";
-        const string E5WACHEADDR = "fastfood2.exe+0x17C0B4";
-        const string E5STATSADDR = "fastfood2.exe+0x17C09C";
 
         int creditProgress = 0;
         Mem mrmy = new Mem();
@@ -175,7 +53,7 @@ namespace PC2Randomizer
             }
         }
 
-        private void memberOldVals()
+        private void memberOldVals()    //Member?
         {
             oldMoneyself = nmrcMoneySelf.Value;
             oldPopulation = nmrcPopulation.Value;
@@ -278,7 +156,7 @@ namespace PC2Randomizer
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            PID = mrmy.GetProcIdFromName("fastfood2");  //TODO: fastfood2 auf pc2 vermutlich für die alte Version
+            PID = mrmy.GetProcIdFromName("fastfood2");  //TODO: fastfood2 auf pc2 vermutlich für die alte CD-Version
             if (PID > 0)
             {
                 mrmy.OpenProcess(PID);
@@ -293,7 +171,7 @@ namespace PC2Randomizer
 
         private void tmrFreegame_Tick(object sender, EventArgs e)
         {
-            int timeLimit = mrmy.ReadInt(TIMELIMITADDR);
+            int timeLimit = mrmy.ReadInt(AddressUtil.TIMELIMIT);
             if (timeLimit > 0)
             {
                 if (readyToStartGame == false)
@@ -394,391 +272,391 @@ namespace PC2Randomizer
             //MoneyE1
             if (chkMoneyE1.Checked)
             {
-                mrmy.WriteMemory(E1MONEYADDR, "int", nmrcMoneyE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_MONEY, "int", nmrcMoneyE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(70, 991);
                 Console.WriteLine("E1 money: " + n);
-                mrmy.WriteMemory(E1MONEYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_MONEY, "int", n.ToString());
             }
             //EinkaeuferE1
             if (chkEinkaeuferE1.Checked)
             {
-                mrmy.WriteMemory(E1EINKAEUFERADDR, "int", nmrcEinkaeuferE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_EINKAEUFER, "int", nmrcEinkaeuferE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Einkaeufer: " + n);
-                mrmy.WriteMemory(E1EINKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_EINKAEUFER, "int", n.ToString());
             }
             //PolitikerE1
             if (chkPolitikerE1.Checked)
             {
-                mrmy.WriteMemory(E1POLITIKERADDR, "int", nmrcPolitikerE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_POLITIKER, "int", nmrcPolitikerE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Politiker: " + n);
-                mrmy.WriteMemory(E1POLITIKERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_POLITIKER, "int", n.ToString());
             }
             //GangsterE1
             if (chkGangsterE1.Checked)
             {
-                mrmy.WriteMemory(E1GANGSTERADDR, "int", nmrcGangsterE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_GANGSTER, "int", nmrcGangsterE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Gangster: " + n);
-                mrmy.WriteMemory(E1GANGSTERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_GANGSTER, "int", n.ToString());
             }
             //VerkaeuferE1
             if (chkVerkaeuferE1.Checked)
             {
-                mrmy.WriteMemory(E1VERKAEUFERADDR, "int", nmrcVerkaeuferE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_VERKAEUFER, "int", nmrcVerkaeuferE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Verkaeufer: " + n);
-                mrmy.WriteMemory(E1VERKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_VERKAEUFER, "int", n.ToString());
             }
             //FachkraftE1
             if (chkFachkraftE1.Checked)
             {
-                mrmy.WriteMemory(E1FACHKRAFTADDR, "int", nmrcFachkraftE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_FACHKRAFT, "int", nmrcFachkraftE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Fachkraft: " + n);
-                mrmy.WriteMemory(E1FACHKRAFTADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_FACHKRAFT, "int", n.ToString());
             }
             //WacheE1
             if (chkWacheE1.Checked)
             {
-                mrmy.WriteMemory(E1WACHEADDR, "int", nmrcWacheE1.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_WACHE, "int", nmrcWacheE1.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E1 Wache: " + n);
-                mrmy.WriteMemory(E1WACHEADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_WACHE, "int", n.ToString());
             }
 
             //MoneyE2
             if (chkMoneyE2.Checked)
             {
-                mrmy.WriteMemory(E2MONEYADDR, "int", nmrcMoneyE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_MONEY, "int", nmrcMoneyE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(70, 991);
                 Console.WriteLine("E2 money: " + n);
-                mrmy.WriteMemory(E2MONEYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_MONEY, "int", n.ToString());
             }
             //EinkaeuferE2
             if (chkEinkaeuferE2.Checked)
             {
-                mrmy.WriteMemory(E2EINKAEUFERADDR, "int", nmrcEinkaeuferE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_EINKAEUFER, "int", nmrcEinkaeuferE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Einkaeufer: " + n);
-                mrmy.WriteMemory(E2EINKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_EINKAEUFER, "int", n.ToString());
             }
             //PolitikerE2
             if (chkPolitikerE2.Checked)
             {
-                mrmy.WriteMemory(E2POLITIKERADDR, "int", nmrcPolitikerE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_POLITIKER, "int", nmrcPolitikerE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Politiker: " + n);
-                mrmy.WriteMemory(E2POLITIKERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_POLITIKER, "int", n.ToString());
             }
             //GangsterE2
             if (chkGangsterE2.Checked)
             {
-                mrmy.WriteMemory(E2GANGSTERADDR, "int", nmrcGangsterE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_GANGSTER, "int", nmrcGangsterE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Gangster: " + n);
-                mrmy.WriteMemory(E2GANGSTERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_GANGSTER, "int", n.ToString());
             }
             //VerkaeuferE2
             if (chkVerkaeuferE2.Checked)
             {
-                mrmy.WriteMemory(E2VERKAEUFERADDR, "int", nmrcVerkaeuferE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_VERKAEUFER, "int", nmrcVerkaeuferE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Verkaeufer: " + n);
-                mrmy.WriteMemory(E2VERKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_VERKAEUFER, "int", n.ToString());
             }
             //FachkraftE2
             if (chkFachkraftE2.Checked)
             {
-                mrmy.WriteMemory(E2FACHKRAFTADDR, "int", nmrcFachkraftE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_FACHKRAFT, "int", nmrcFachkraftE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Fachkraft: " + n);
-                mrmy.WriteMemory(E2FACHKRAFTADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_FACHKRAFT, "int", n.ToString());
             }
             //WacheE2
             if (chkWacheE2.Checked)
             {
-                mrmy.WriteMemory(E2WACHEADDR, "int", nmrcWacheE2.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_WACHE, "int", nmrcWacheE2.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E2 Wache: " + n);
-                mrmy.WriteMemory(E2WACHEADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_WACHE, "int", n.ToString());
             }
 
             //MoneyE3
             if (chkMoneyE3.Checked)
             {
-                mrmy.WriteMemory(E3MONEYADDR, "int", nmrcMoneyE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_MONEY, "int", nmrcMoneyE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(70, 991);
                 Console.WriteLine("E3 money: " + n);
-                mrmy.WriteMemory(E3MONEYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_MONEY, "int", n.ToString());
             }
             //EinkaeuferE3
             if (chkEinkaeuferE3.Checked)
             {
-                mrmy.WriteMemory(E3EINKAEUFERADDR, "int", nmrcEinkaeuferE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_EINKAEUFER, "int", nmrcEinkaeuferE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Einkaeufer: " + n);
-                mrmy.WriteMemory(E3EINKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_EINKAEUFER, "int", n.ToString());
             }
             //PolitikerE3
             if (chkPolitikerE3.Checked)
             {
-                mrmy.WriteMemory(E3POLITIKERADDR, "int", nmrcPolitikerE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_POLITIKER, "int", nmrcPolitikerE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Politiker: " + n);
-                mrmy.WriteMemory(E3POLITIKERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_POLITIKER, "int", n.ToString());
             }
             //GangsterE3
             if (chkGangsterE3.Checked)
             {
-                mrmy.WriteMemory(E3GANGSTERADDR, "int", nmrcGangsterE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_GANGSTER, "int", nmrcGangsterE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Gangster: " + n);
-                mrmy.WriteMemory(E3GANGSTERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_GANGSTER, "int", n.ToString());
             }
             //VerkaeuferE3
             if (chkVerkaeuferE3.Checked)
             {
-                mrmy.WriteMemory(E3VERKAEUFERADDR, "int", nmrcVerkaeuferE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_VERKAEUFER, "int", nmrcVerkaeuferE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Verkaeufer: " + n);
-                mrmy.WriteMemory(E3VERKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_VERKAEUFER, "int", n.ToString());
             }
             //FachkraftE3
             if (chkFachkraftE3.Checked)
             {
-                mrmy.WriteMemory(E3FACHKRAFTADDR, "int", nmrcFachkraftE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_FACHKRAFT, "int", nmrcFachkraftE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Fachkraft: " + n);
-                mrmy.WriteMemory(E3FACHKRAFTADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_FACHKRAFT, "int", n.ToString());
             }
             //WacheE3
             if (chkWacheE3.Checked)
             {
-                mrmy.WriteMemory(E3WACHEADDR, "int", nmrcWacheE3.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_WACHE, "int", nmrcWacheE3.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E3 Wache: " + n);
-                mrmy.WriteMemory(E3WACHEADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_WACHE, "int", n.ToString());
             }
 
             //MoneyE4
             if (chkMoneyE4.Checked)
             {
-                mrmy.WriteMemory(E4MONEYADDR, "int", nmrcMoneyE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_MONEY, "int", nmrcMoneyE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(70, 991);
                 Console.WriteLine("E4 money: " + n);
-                mrmy.WriteMemory(E4MONEYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_MONEY, "int", n.ToString());
             }
             //EinkaeuferE4
             if (chkEinkaeuferE4.Checked)
             {
-                mrmy.WriteMemory(E4EINKAEUFERADDR, "int", nmrcEinkaeuferE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_EINKAEUFER, "int", nmrcEinkaeuferE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Einkaeufer: " + n);
-                mrmy.WriteMemory(E4EINKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_EINKAEUFER, "int", n.ToString());
             }
             //PolitikerE4
             if (chkPolitikerE4.Checked)
             {
-                mrmy.WriteMemory(E4POLITIKERADDR, "int", nmrcPolitikerE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_POLITIKER, "int", nmrcPolitikerE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Politiker: " + n);
-                mrmy.WriteMemory(E4POLITIKERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_POLITIKER, "int", n.ToString());
             }
             //GangsterE4
             if (chkGangsterE4.Checked)
             {
-                mrmy.WriteMemory(E4GANGSTERADDR, "int", nmrcGangsterE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_GANGSTER, "int", nmrcGangsterE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Gangster: " + n);
-                mrmy.WriteMemory(E4GANGSTERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_GANGSTER, "int", n.ToString());
             }
             //VerkaeuferE4
             if (chkVerkaeuferE4.Checked)
             {
-                mrmy.WriteMemory(E4VERKAEUFERADDR, "int", nmrcVerkaeuferE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_VERKAEUFER, "int", nmrcVerkaeuferE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Verkaeufer: " + n);
-                mrmy.WriteMemory(E4VERKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_VERKAEUFER, "int", n.ToString());
             }
             //FachkraftE4
             if (chkFachkraftE4.Checked)
             {
-                mrmy.WriteMemory(E4FACHKRAFTADDR, "int", nmrcFachkraftE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_FACHKRAFT, "int", nmrcFachkraftE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Fachkraft: " + n);
-                mrmy.WriteMemory(E4FACHKRAFTADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_FACHKRAFT, "int", n.ToString());
             }
             //WacheE4
             if (chkWacheE4.Checked)
             {
-                mrmy.WriteMemory(E4WACHEADDR, "int", nmrcWacheE4.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_WACHE, "int", nmrcWacheE4.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E4 Wache: " + n);
-                mrmy.WriteMemory(E4WACHEADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_WACHE, "int", n.ToString());
             }
 
             //MoneyE5
             if (chkMoneyE5.Checked)
             {
-                mrmy.WriteMemory(E5MONEYADDR, "int", nmrcMoneyE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_MONEY, "int", nmrcMoneyE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(70, 991);
                 Console.WriteLine("E5 money: " + n);
-                mrmy.WriteMemory(E5MONEYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_MONEY, "int", n.ToString());
             }
             //EinkaeuferE5
             if (chkEinkaeuferE5.Checked)
             {
-                mrmy.WriteMemory(E5EINKAEUFERADDR, "int", nmrcEinkaeuferE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_EINKAEUFER, "int", nmrcEinkaeuferE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Einkaeufer: " + n);
-                mrmy.WriteMemory(E5EINKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_EINKAEUFER, "int", n.ToString());
             }
             //PolitikerE5
             if (chkPolitikerE5.Checked)
             {
-                mrmy.WriteMemory(E5POLITIKERADDR, "int", nmrcPolitikerE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_POLITIKER, "int", nmrcPolitikerE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Politiker: " + n);
-                mrmy.WriteMemory(E5POLITIKERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_POLITIKER, "int", n.ToString());
             }
             //GangsterE5
             if (chkGangsterE5.Checked)
             {
-                mrmy.WriteMemory(E5GANGSTERADDR, "int", nmrcGangsterE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_GANGSTER, "int", nmrcGangsterE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Gangster: " + n);
-                mrmy.WriteMemory(E5GANGSTERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_GANGSTER, "int", n.ToString());
             }
             //VerkaeuferE5
             if (chkVerkaeuferE5.Checked)
             {
-                mrmy.WriteMemory(E5VERKAEUFERADDR, "int", nmrcVerkaeuferE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_VERKAEUFER, "int", nmrcVerkaeuferE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Verkaeufer: " + n);
-                mrmy.WriteMemory(E5VERKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_VERKAEUFER, "int", n.ToString());
             }
             //FachkraftE5
             if (chkFachkraftE5.Checked)
             {
-                mrmy.WriteMemory(E5FACHKRAFTADDR, "int", nmrcFachkraftE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_FACHKRAFT, "int", nmrcFachkraftE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Fachkraft: " + n);
-                mrmy.WriteMemory(E5FACHKRAFTADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_FACHKRAFT, "int", n.ToString());
             }
             //WacheE5
             if (chkWacheE5.Checked)
             {
-                mrmy.WriteMemory(E5WACHEADDR, "int", nmrcWacheE5.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_WACHE, "int", nmrcWacheE5.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("E5 Wache: " + n);
-                mrmy.WriteMemory(E5WACHEADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_WACHE, "int", n.ToString());
             }
         }
 
@@ -787,78 +665,78 @@ namespace PC2Randomizer
             //Money
             if(chkMoneySelf.Checked)
             {
-                mrmy.WriteMemory(PLAYERMONEYADDR, "int", nmrcMoneySelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_MONEY, "int", nmrcMoneySelf.Value.ToString());
             } else
             {
                 int n = rng.Next(70, 991);
                 Console.WriteLine("Playermoney: " + n);
-                mrmy.WriteMemory(PLAYERMONEYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_MONEY, "int", n.ToString());
             }
             //Einkaeufer
             if (chkEinkaeuferSelf.Checked)
             {
-                mrmy.WriteMemory(PLAYEREINKAEUFERADDR, "int", nmrcEinkaeuferSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_EINKAEUFER, "int", nmrcEinkaeuferSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Einkaeufer: " + n);
-                mrmy.WriteMemory(PLAYEREINKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_EINKAEUFER, "int", n.ToString());
             }
             //Politiker
             if (chkPolitikerSelf.Checked)
             {
-                mrmy.WriteMemory(PLAYERPOLITIKERADDR, "int", nmrcPolitikerSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_POLITIKER, "int", nmrcPolitikerSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Politiker: " + n);
-                mrmy.WriteMemory(PLAYERPOLITIKERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_POLITIKER, "int", n.ToString());
             }
             //Gangster
             if (chkGangsterSelf.Checked)
             {
-                mrmy.WriteMemory(PLAYERGANGSTERADDR, "int", nmrcGangsterSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_GANGSTER, "int", nmrcGangsterSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Gangster: " + n);
-                mrmy.WriteMemory(PLAYERGANGSTERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_GANGSTER, "int", n.ToString());
             }
             //Verkaeufer
             if (chkVerkaeuferSelf.Checked)
             {
-                mrmy.WriteMemory(PLAYERVERKAEUFERADDR, "int", nmrcVerkaeuferSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_VERKAEUFER, "int", nmrcVerkaeuferSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Verkaeufer: " + n);
-                mrmy.WriteMemory(PLAYERVERKAEUFERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_VERKAEUFER, "int", n.ToString());
             }
             //Fachkraft
             if (chkFachkraftSelf.Checked)
             {
-                mrmy.WriteMemory(PLAYERFACHKRAFTADDR, "int", nmrcFachkraftSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_FACHKRAFT, "int", nmrcFachkraftSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Fachkraft: " + n);
-                mrmy.WriteMemory(PLAYERFACHKRAFTADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_FACHKRAFT, "int", n.ToString());
             }
             //Wache
             if (chkWacheSelf.Checked)
             {
-                mrmy.WriteMemory(PLAYERWACHEADDR, "int", nmrcWacheSelf.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_WACHE, "int", nmrcWacheSelf.Value.ToString());
             }
             else
             {
                 int n = rng.Next(0, 13) - 6;
                 Console.WriteLine("Player Wache: " + n);
-                mrmy.WriteMemory(PLAYERWACHEADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.PLAYER_WACHE, "int", n.ToString());
             }
         }
 
@@ -870,56 +748,56 @@ namespace PC2Randomizer
             if (cmbIconE1.SelectedIndex != 0)
             {
                 index = cmbIconE1.SelectedIndex - 1;
-                mrmy.WriteMemory(E1LOGOADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_LOGO, "int", index.ToString());
             }
             if (cmbColorE1.SelectedIndex != 0)
             {
                 index = cmbColorE1.SelectedIndex - 1;
-                mrmy.WriteMemory(E1COLORADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_1_COLOR, "int", index.ToString());
             }
             //Gegner 2
             if (cmbIconE2.SelectedIndex != 0)
             {
                 index = cmbIconE2.SelectedIndex - 1;
-                mrmy.WriteMemory(E2LOGOADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_LOGO, "int", index.ToString());
             }
             if (cmbColorE2.SelectedIndex != 0)
             {
                 index = cmbColorE2.SelectedIndex - 1;
-                mrmy.WriteMemory(E2COLORADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_2_COLOR, "int", index.ToString());
             }
             //Gegner 3
             if (cmbIconE3.SelectedIndex != 0)
             {
                 index = cmbIconE3.SelectedIndex - 1;
-                mrmy.WriteMemory(E3LOGOADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_LOGO, "int", index.ToString());
             }
             if (cmbColorE3.SelectedIndex != 0)
             {
                 index = cmbColorE3.SelectedIndex - 1;
-                mrmy.WriteMemory(E3COLORADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_3_COLOR, "int", index.ToString());
             }
             //Gegner 4
             if (cmbIconE4.SelectedIndex != 0)
             {
                 index = cmbIconE4.SelectedIndex - 1;
-                mrmy.WriteMemory(E4LOGOADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_LOGO, "int", index.ToString());
             }
             if (cmbColorE4.SelectedIndex != 0)
             {
                 index = cmbColorE4.SelectedIndex - 1;
-                mrmy.WriteMemory(E4COLORADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_4_COLOR, "int", index.ToString());
             }
             //Gegner 5
             if (cmbIconE5.SelectedIndex != 0)
             {
                 index = cmbIconE5.SelectedIndex - 1;
-                mrmy.WriteMemory(E5LOGOADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_LOGO, "int", index.ToString());
             }
             if (cmbColorE5.SelectedIndex != 0)
             {
                 index = cmbColorE5.SelectedIndex - 1;
-                mrmy.WriteMemory(E5COLORADDR, "int", index.ToString());
+                mrmy.WriteMemory(AddressUtil.ENEMY_5_COLOR, "int", index.ToString());
             }
         }
 
@@ -932,16 +810,16 @@ namespace PC2Randomizer
             {
                 if (cmbGoal1.SelectedIndex == 1)
                 {
-                    mrmy.WriteMemory(GOAL1ADDR, "int", "-1");
+                    mrmy.WriteMemory(AddressUtil.GOAL_1, "int", "-1");
                 }
                 else if (cmbGoal1.SelectedIndex == 2)
                 {
-                    mrmy.WriteMemory(GOAL1ADDR, "int", "0");
+                    mrmy.WriteMemory(AddressUtil.GOAL_1, "int", "0");
                 }
                 else
                 {
                     valueToWrite = cmbGoal1.SelectedIndex - 1;
-                    mrmy.WriteMemory(GOAL1ADDR, "int", valueToWrite.ToString());
+                    mrmy.WriteMemory(AddressUtil.GOAL_1, "int", valueToWrite.ToString());
                     fixGoals(cmbGoal1.SelectedIndex - 1);
                 }
             }
@@ -953,7 +831,7 @@ namespace PC2Randomizer
                     n = 0;
                 }
                 Console.WriteLine("Goal1: " + n);
-                mrmy.WriteMemory(GOAL1ADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.GOAL_1, "int", n.ToString());
                 fixGoals(n);
             }
             //Goal 2
@@ -961,16 +839,16 @@ namespace PC2Randomizer
             {
                 if (cmbGoal2.SelectedIndex == 1)
                 {
-                    mrmy.WriteMemory(GOAL2ADDR, "int", "-1");
+                    mrmy.WriteMemory(AddressUtil.GOAL_2, "int", "-1");
                 }
                 else if (cmbGoal2.SelectedIndex == 2)
                 {
-                    mrmy.WriteMemory(GOAL2ADDR, "int", "0");
+                    mrmy.WriteMemory(AddressUtil.GOAL_2, "int", "0");
                 }
                 else
                 {
                     valueToWrite = cmbGoal2.SelectedIndex - 1;
-                    mrmy.WriteMemory(GOAL2ADDR, "int", valueToWrite.ToString());
+                    mrmy.WriteMemory(AddressUtil.GOAL_2, "int", valueToWrite.ToString());
                     fixGoals(cmbGoal2.SelectedIndex - 1);
                 }
             }
@@ -985,7 +863,7 @@ namespace PC2Randomizer
                     n = -1;
                 }
                 Console.WriteLine("Goal2: " + n);
-                mrmy.WriteMemory(GOAL2ADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.GOAL_2, "int", n.ToString());
                 fixGoals(n);
             }
             //Goal 3
@@ -993,16 +871,16 @@ namespace PC2Randomizer
             {
                 if (cmbGoal3.SelectedIndex == 1)
                 {
-                    mrmy.WriteMemory(GOAL3ADDR, "int", "-1");
+                    mrmy.WriteMemory(AddressUtil.GOAL_3, "int", "-1");
                 }
                 else if (cmbGoal3.SelectedIndex == 2)
                 {
-                    mrmy.WriteMemory(GOAL3ADDR, "int", "0");
+                    mrmy.WriteMemory(AddressUtil.GOAL_3, "int", "0");
                 }
                 else
                 {
                     valueToWrite = cmbGoal3.SelectedIndex - 1;
-                    mrmy.WriteMemory(GOAL3ADDR, "int", valueToWrite.ToString());
+                    mrmy.WriteMemory(AddressUtil.GOAL_3, "int", valueToWrite.ToString());
                     fixGoals(cmbGoal3.SelectedIndex - 1);
                 }
             }
@@ -1018,7 +896,7 @@ namespace PC2Randomizer
                     n = -1;
                 }
                 Console.WriteLine("Goal3: " + n);
-                mrmy.WriteMemory(GOAL3ADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.GOAL_3, "int", n.ToString());
                 fixGoals(n);
             }
         }
@@ -1058,12 +936,12 @@ namespace PC2Randomizer
         {
             if(chkDifficulty.Checked == true)
             {
-                mrmy.WriteMemory(DIFFICULTYADDR, "int", nmrcDifficulty.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.DIFFICULTY, "int", nmrcDifficulty.Value.ToString());
             } else
             {
                 int n = rng.Next(0, 11);
                 Console.WriteLine("Difficulty: " + n);
-                mrmy.WriteMemory(DIFFICULTYADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.DIFFICULTY, "int", n.ToString());
             }
         }
 
@@ -1071,12 +949,12 @@ namespace PC2Randomizer
         {
             if(chkTimelimit.Checked)
             {
-                mrmy.WriteMemory(TIMELIMITADDR, "int", nmrcTimelimit.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.TIMELIMIT, "int", nmrcTimelimit.Value.ToString());
             } else
             {
                 int n = rng.Next(1, 12);
                 Console.WriteLine("Timelimit (11=unlimited): " + n);
-                mrmy.WriteMemory(TIMELIMITADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.TIMELIMIT, "int", n.ToString());
             }
         }
 
@@ -1085,11 +963,11 @@ namespace PC2Randomizer
             if (cmbCity.SelectedIndex == 0)
             {
                 int n = rng.Next(0, 10);
-                mrmy.WriteMemory(CITYNUMBERADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.CITY_NUMBER, "int", n.ToString());
                 Console.WriteLine("City: " + n);
             } else
             {
-                mrmy.WriteMemory(CITYNUMBERADDR, "int", (cmbCity.SelectedIndex-1).ToString());
+                mrmy.WriteMemory(AddressUtil.CITY_NUMBER, "int", (cmbCity.SelectedIndex-1).ToString());
             }
         }
 
@@ -1098,7 +976,7 @@ namespace PC2Randomizer
             if(!chkPopulation.Checked)
             {
                 int n = rng.Next(100, 501);
-                mrmy.WriteMemory(POPULATIONADDR, "int", n.ToString());
+                mrmy.WriteMemory(AddressUtil.POPULATION, "int", n.ToString());
                 Console.WriteLine("Population: " + n);
             }
         }
@@ -1121,20 +999,20 @@ namespace PC2Randomizer
             //Miete
             if (chkRent.Checked)
             {
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, RENTOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.RENT_OFFSETS);
                 writeFloatToPointer(addressToWrite, (float)nmrcRent.Value);
             } else
             {
                 int n = rng.Next(1, 21);
                 float rent = n / 10f;
                 Console.WriteLine("Miete: " + rent);
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, RENTOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.RENT_OFFSETS);
                 writeFloatToPointer(addressToWrite, rent);
             }
             //Geduld
             if (chkPatience.Checked)
             {
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, PATIENCEOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.PATIENCE_OFFSETS);
                 writeFloatToPointer(addressToWrite, (float)nmrcPatience.Value);
             }
             else
@@ -1142,13 +1020,13 @@ namespace PC2Randomizer
                 int n = rng.Next(1, 21);
                 float patience = n / 10f;
                 Console.WriteLine("Geduld: " + patience);
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, PATIENCEOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.PATIENCE_OFFSETS);
                 writeFloatToPointer(addressToWrite, patience);
             }
             //Kaufpreis
             if (chkBuyprice.Checked)
             {
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, BUYPRICEOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.BUYPRICE_OFFSETS);
                 writeFloatToPointer(addressToWrite, (float)nmrcBuyprice.Value);
             }
             else
@@ -1156,13 +1034,13 @@ namespace PC2Randomizer
                 int n = rng.Next(1, 21);
                 float buyprice = n / 10f;
                 Console.WriteLine("Kaufpreis: " + buyprice);
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, BUYPRICEOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.BUYPRICE_OFFSETS);
                 writeFloatToPointer(addressToWrite, buyprice);
             }
             //Einkommen
             if (chkIncome.Checked)
             {
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, INCOMEOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.INCOME_OFFSETS);
                 writeFloatToPointer(addressToWrite, (float)nmrcIncome.Value);
             }
             else
@@ -1170,13 +1048,13 @@ namespace PC2Randomizer
                 int n = rng.Next(1, 21);
                 float income = n / 10f;
                 Console.WriteLine("Einkommen: " + income);
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, INCOMEOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.INCOME_OFFSETS);
                 writeFloatToPointer(addressToWrite, income);
             }
             //Qualitaet
             if (chkQuality.Checked)
             {
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, QUALITYOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.QUALITY_OFFSETS);
                 writeFloatToPointer(addressToWrite, (float)nmrcQuality.Value);
             }
             else
@@ -1184,13 +1062,13 @@ namespace PC2Randomizer
                 int n = rng.Next(1, 21);
                 float quality = n / 10f;
                 Console.WriteLine("Qualitaet: " + quality);
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, QUALITYOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.QUALITY_OFFSETS);
                 writeFloatToPointer(addressToWrite, quality);
             }
             //Komfort
             if (chkComfort.Checked)
             {
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, COMFORTOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.COMFORT_OFFSETS);
                 writeFloatToPointer(addressToWrite, (float)nmrcComfort.Value);
             }
             else
@@ -1198,7 +1076,7 @@ namespace PC2Randomizer
                 int n = rng.Next(1, 21);
                 float comfort = n / 10f;
                 Console.WriteLine("Komfort: " + comfort);
-                string addressToWrite = getAddressFromPointer(CITYSTATSADDR, COMFORTOFFSETS);
+                string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.COMFORT_OFFSETS);
                 writeFloatToPointer(addressToWrite, comfort);
             }
         }
@@ -1207,51 +1085,51 @@ namespace PC2Randomizer
         {
             if (n == 5)
             {
-                mrmy.WriteMemory(ENEMY1ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY2ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY3ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY4ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY5ADDR, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_1, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_2, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "1");
             }
             else if (n == 4)
             {
-                mrmy.WriteMemory(ENEMY1ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY2ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY3ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY4ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY5ADDR, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_1, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_2, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "0");
             }
             else if (n == 3)
             {
-                mrmy.WriteMemory(ENEMY1ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY2ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY3ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY4ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY5ADDR, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_1, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_2, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "0");
             }
             else if (n == 2)
             {
-                mrmy.WriteMemory(ENEMY1ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY2ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY3ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY4ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY5ADDR, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_1, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_2, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "0");
             }
             else if (n == 1)
             {
-                mrmy.WriteMemory(ENEMY1ADDR, "int", "1");
-                mrmy.WriteMemory(ENEMY2ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY3ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY4ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY5ADDR, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_1, "int", "1");
+                mrmy.WriteMemory(AddressUtil.ENEMY_2, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "0");
             }
             else
             {
-                mrmy.WriteMemory(ENEMY1ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY2ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY3ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY4ADDR, "int", "0");
-                mrmy.WriteMemory(ENEMY5ADDR, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_1, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_2, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_3, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_4, "int", "0");
+                mrmy.WriteMemory(AddressUtil.ENEMY_5, "int", "0");
                 forceNoMissions = true;
             }
             enemyAmount = n;
@@ -1306,7 +1184,7 @@ namespace PC2Randomizer
                 buildingsAndMissions += 1;
                 setMaxHQ(nmrcMaxHQ.Value.ToString());
             }
-            mrmy.WriteMemory(MISSIONBUILDINGYNADDR, "int", buildingsAndMissions.ToString());
+            mrmy.WriteMemory(AddressUtil.MISSION_BUILDING_YN, "int", buildingsAndMissions.ToString());
             //0, Missionen + 65536, Startfiliale + 256, maxHQ + 1
         }
 
@@ -1314,7 +1192,7 @@ namespace PC2Randomizer
         {
             Console.WriteLine("Max HQ: " + newVal);
             maxHQ = int.Parse(newVal);
-            mrmy.WriteMemory(MAXHQADDR, "int", newVal);
+            mrmy.WriteMemory(AddressUtil.MAX_HQ, "int", newVal);
         }
 
         private void randomizeStartHQ()
@@ -1326,11 +1204,11 @@ namespace PC2Randomizer
                 if (n != 0)
                 {
                     Console.WriteLine("StartHQ?: " + 1);
-                    mrmy.WriteMemory(STARTHQYNADDR, "int", "1");
+                    mrmy.WriteMemory(AddressUtil.START_HQ_YN, "int", "1");
                 } else
                 {
                     Console.WriteLine("StartHQ?: " + 0);
-                    mrmy.WriteMemory(STARTHQYNADDR, "int", "0");
+                    mrmy.WriteMemory(AddressUtil.START_HQ_YN, "int", "0");
                 }
                 if(startHQ > maxHQ)
                 {
@@ -1341,13 +1219,13 @@ namespace PC2Randomizer
             {
                 if (nmrcStartHQ.Value > 0)
                 {
-                    mrmy.WriteMemory(STARTHQYNADDR, "int", "1");
+                    mrmy.WriteMemory(AddressUtil.START_HQ_YN, "int", "1");
                 }
                 else
                 {
-                    mrmy.WriteMemory(STARTHQYNADDR, "int", "0");
+                    mrmy.WriteMemory(AddressUtil.START_HQ_YN, "int", "0");
                 }
-                mrmy.WriteMemory(STARTHQADDR, "int", nmrcStartHQ.Value.ToString());
+                mrmy.WriteMemory(AddressUtil.START_HQ, "int", nmrcStartHQ.Value.ToString());
             }
         }
 
@@ -1486,7 +1364,7 @@ namespace PC2Randomizer
             //Sonst kann das Game crashen
             setRandomStatsToZero();
 
-            byte[] bytes = mrmy.ReadBytes(CITYSTATSADDR, 4);
+            byte[] bytes = mrmy.ReadBytes(AddressUtil.CITY_STATS, 4);
             if(!isGameLoaded())
             {
                 return;
@@ -1498,17 +1376,17 @@ namespace PC2Randomizer
 
         private void setRandomStatsToZero()
         {
-            mrmy.WriteMemory(E1STATSADDR, "int", "0");
-            mrmy.WriteMemory(E2STATSADDR, "int", "0");
-            mrmy.WriteMemory(E3STATSADDR, "int", "0");
-            mrmy.WriteMemory(E4STATSADDR, "int", "0");
-            mrmy.WriteMemory(E5STATSADDR, "int", "0");
+            mrmy.WriteMemory(AddressUtil.ENEMY_1_STATS, "int", "0");
+            mrmy.WriteMemory(AddressUtil.ENEMY_2_STATS, "int", "0");
+            mrmy.WriteMemory(AddressUtil.ENEMY_3_STATS, "int", "0");
+            mrmy.WriteMemory(AddressUtil.ENEMY_4_STATS, "int", "0");
+            mrmy.WriteMemory(AddressUtil.ENEMY_5_STATS, "int", "0");
         }
 
         private bool isGameLoaded()
         {
             //Die Funktion liest den Pointer bis zu den Citystats und wirft bei Fehlern false
-            string addressToWrite = getAddressFromPointer(CITYSTATSADDR, RENTOFFSETS);
+            string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.RENT_OFFSETS);
             if(addressToWrite == "")
             {
                 return false;
