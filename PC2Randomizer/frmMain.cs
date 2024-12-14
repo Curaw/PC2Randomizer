@@ -70,7 +70,7 @@ namespace PC2Randomizer
 
         private void createPlayerObjects()
         {
-            PlayerRandomizer playerRNG = new PlayerRandomizer(mrmy, rng);
+            playerRNG = new PlayerRandomizer(mrmy, rng);
             playerRNG.setCheckboxes(chkMoneySelf, chkEinkaeuferSelf, chkPolitikerSelf, chkGangsterSelf, chkVerkaeuferSelf, chkFachkraftSelf, chkWacheSelf);
             playerRNG.setNumerics(nmrcMoneySelf, nmrcEinkaeuferSelf, nmrcPolitikerSelf, nmrcGangsterSelf, nmrcVerkaeuferSelf, nmrcFachkraftSelf, nmrcWacheSelf);
             playerRNG.setAddresses(AddressUtil.PLAYER_MONEY, AddressUtil.PLAYER_BUYER, AddressUtil.PLAYER_POLITICIAN,
