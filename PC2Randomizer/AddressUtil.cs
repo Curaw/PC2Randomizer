@@ -8,7 +8,7 @@ namespace PC2Randomizer
 {
     internal class AddressUtil
     {
-        private static string NAME_OF_EXE = "fastfood2.exe";    //Maybe pc2.exe for old CD-Version
+        public static string NAME_OF_EXE = "fastfood2.exe";    //Maybe pc2.exe for old CD-Version
 
         public static string POPULATION = NAME_OF_EXE + "+0x17BB28";
         public static string TIMELIMIT = NAME_OF_EXE + "+0x17BB2C";
