@@ -231,6 +231,8 @@
             this.chkEinkaeuferE5 = new System.Windows.Forms.CheckBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tbpGame = new System.Windows.Forms.TabPage();
+            this.cmbGoal3 = new System.Windows.Forms.ComboBox();
+            this.cmbGoal2 = new System.Windows.Forms.ComboBox();
             this.tbp = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbpPlayer = new System.Windows.Forms.TabPage();
@@ -255,8 +257,6 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.cmbGoal2 = new System.Windows.Forms.ComboBox();
-            this.cmbGoal3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcPopulation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcStartHQ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcMaxHQ)).BeginInit();
@@ -2558,6 +2558,7 @@
             // 
             // tmrIngame
             // 
+            this.tmrIngame.Interval = 1;
             this.tmrIngame.Tick += new System.EventHandler(this.tmrIngame_Tick);
             // 
             // chkEinkaeuferSelf
@@ -2934,6 +2935,118 @@
             this.tbpGame.TabIndex = 0;
             this.tbpGame.Text = "Game";
             this.tbpGame.UseVisualStyleBackColor = true;
+            // 
+            // cmbGoal3
+            // 
+            this.cmbGoal3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cmbGoal3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGoal3.FormattingEnabled = true;
+            this.cmbGoal3.Items.AddRange(new object[] {
+            "Random",
+            "4294967295 (no Goal)",
+            "0 (HQ Level 6)",
+            "2 (Buy Branch)",
+            "3 (Big Shot 60%)",
+            "4 (1 Middle Branch)",
+            "5 (No Shops)",
+            "6 (10 Tourists)",
+            "7 (Ruin Branch)",
+            "8 (Gourmet Star)",
+            "9 (Gourmet Stars)",
+            "10 (Ruin Reputation)",
+            "11 (Marketshare 50%)",
+            "12 (Mass recipe)",
+            "13 (3x Police)",
+            "14 (Protect Branch, HQ3)",
+            "15 (Style)",
+            "16 (Sell Pizzas)",
+            "17 (250.000)",
+            "18 (Bomb Branch, HQ6)",
+            "19 (2 Enemies bankrupt, 2xEnemy)",
+            "20 (Bomb HQ, HQ6)",
+            "21 (5 good Branches)",
+            "22 (Better Personel)",
+            "23 (Moneymaking 50%)",
+            "24 (Louds and Big Shots)",
+            "25 (1 Enemy bankrupt)",
+            "26 (Protectionmoney 40k)",
+            "27 (6 big Branches)",
+            "28 (Protect HQ, HQ6)",
+            "29 (Bomb HQ, HQ6)",
+            "30 (100.000)",
+            "31 (500.000)",
+            "32 (1.000.000)",
+            "33 (2.000.000)",
+            "34 (Moneymaking 75%)",
+            "35 (Moneymaking 80%)",
+            "36 (Marketshare 80%)",
+            "37 (Kids 60%)",
+            "38 (Teens 60%)",
+            "39 (Studies 60%)",
+            "40 (Louds 60%)",
+            "41 (Yuppies 60%)",
+            "42 (Gothics 60%)",
+            "43 (Tourist 60%)"});
+            this.cmbGoal3.Location = new System.Drawing.Point(183, 121);
+            this.cmbGoal3.Name = "cmbGoal3";
+            this.cmbGoal3.Size = new System.Drawing.Size(159, 21);
+            this.cmbGoal3.TabIndex = 168;
+            // 
+            // cmbGoal2
+            // 
+            this.cmbGoal2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cmbGoal2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGoal2.FormattingEnabled = true;
+            this.cmbGoal2.Items.AddRange(new object[] {
+            "Random",
+            "4294967295 (no Goal)",
+            "0 (HQ Level 6)",
+            "2 (Buy Branch)",
+            "3 (Big Shot 60%)",
+            "4 (1 Middle Branch)",
+            "5 (No Shops)",
+            "6 (10 Tourists)",
+            "7 (Ruin Branch)",
+            "8 (Gourmet Star)",
+            "9 (Gourmet Stars)",
+            "10 (Ruin Reputation)",
+            "11 (Marketshare 50%)",
+            "12 (Mass recipe)",
+            "13 (3x Police)",
+            "14 (Protect Branch, HQ3)",
+            "15 (Style)",
+            "16 (Sell Pizzas)",
+            "17 (250.000)",
+            "18 (Bomb Branch, HQ6)",
+            "19 (2 Enemies bankrupt, 2xEnemy)",
+            "20 (Bomb HQ, HQ6)",
+            "21 (5 good Branches)",
+            "22 (Better Personel)",
+            "23 (Moneymaking 50%)",
+            "24 (Louds and Big Shots)",
+            "25 (1 Enemy bankrupt)",
+            "26 (Protectionmoney 40k)",
+            "27 (6 big Branches)",
+            "28 (Protect HQ, HQ6)",
+            "29 (Bomb HQ, HQ6)",
+            "30 (100.000)",
+            "31 (500.000)",
+            "32 (1.000.000)",
+            "33 (2.000.000)",
+            "34 (Moneymaking 75%)",
+            "35 (Moneymaking 80%)",
+            "36 (Marketshare 80%)",
+            "37 (Kids 60%)",
+            "38 (Teens 60%)",
+            "39 (Studies 60%)",
+            "40 (Louds 60%)",
+            "41 (Yuppies 60%)",
+            "42 (Gothics 60%)",
+            "43 (Tourist 60%)"});
+            this.cmbGoal2.Location = new System.Drawing.Point(183, 94);
+            this.cmbGoal2.Name = "cmbGoal2";
+            this.cmbGoal2.Size = new System.Drawing.Size(159, 21);
+            this.cmbGoal2.TabIndex = 167;
             // 
             // tbp
             // 
@@ -3328,118 +3441,6 @@
             // 
             this.openFileDialog.DefaultExt = "cfg";
             this.openFileDialog.Filter = "Config File|*.cfg";
-            // 
-            // cmbGoal2
-            // 
-            this.cmbGoal2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cmbGoal2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGoal2.FormattingEnabled = true;
-            this.cmbGoal2.Items.AddRange(new object[] {
-            "Random",
-            "4294967295 (no Goal)",
-            "0 (HQ Level 6)",
-            "2 (Buy Branch)",
-            "3 (Big Shot 60%)",
-            "4 (1 Middle Branch)",
-            "5 (No Shops)",
-            "6 (10 Tourists)",
-            "7 (Ruin Branch)",
-            "8 (Gourmet Star)",
-            "9 (Gourmet Stars)",
-            "10 (Ruin Reputation)",
-            "11 (Marketshare 50%)",
-            "12 (Mass recipe)",
-            "13 (3x Police)",
-            "14 (Protect Branch, HQ3)",
-            "15 (Style)",
-            "16 (Sell Pizzas)",
-            "17 (250.000)",
-            "18 (Bomb Branch, HQ6)",
-            "19 (2 Enemies bankrupt, 2xEnemy)",
-            "20 (Bomb HQ, HQ6)",
-            "21 (5 good Branches)",
-            "22 (Better Personel)",
-            "23 (Moneymaking 50%)",
-            "24 (Louds and Big Shots)",
-            "25 (1 Enemy bankrupt)",
-            "26 (Protectionmoney 40k)",
-            "27 (6 big Branches)",
-            "28 (Protect HQ, HQ6)",
-            "29 (Bomb HQ, HQ6)",
-            "30 (100.000)",
-            "31 (500.000)",
-            "32 (1.000.000)",
-            "33 (2.000.000)",
-            "34 (Moneymaking 75%)",
-            "35 (Moneymaking 80%)",
-            "36 (Marketshare 80%)",
-            "37 (Kids 60%)",
-            "38 (Teens 60%)",
-            "39 (Studies 60%)",
-            "40 (Louds 60%)",
-            "41 (Yuppies 60%)",
-            "42 (Gothics 60%)",
-            "43 (Tourist 60%)"});
-            this.cmbGoal2.Location = new System.Drawing.Point(183, 94);
-            this.cmbGoal2.Name = "cmbGoal2";
-            this.cmbGoal2.Size = new System.Drawing.Size(159, 21);
-            this.cmbGoal2.TabIndex = 167;
-            // 
-            // cmbGoal3
-            // 
-            this.cmbGoal3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cmbGoal3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGoal3.FormattingEnabled = true;
-            this.cmbGoal3.Items.AddRange(new object[] {
-            "Random",
-            "4294967295 (no Goal)",
-            "0 (HQ Level 6)",
-            "2 (Buy Branch)",
-            "3 (Big Shot 60%)",
-            "4 (1 Middle Branch)",
-            "5 (No Shops)",
-            "6 (10 Tourists)",
-            "7 (Ruin Branch)",
-            "8 (Gourmet Star)",
-            "9 (Gourmet Stars)",
-            "10 (Ruin Reputation)",
-            "11 (Marketshare 50%)",
-            "12 (Mass recipe)",
-            "13 (3x Police)",
-            "14 (Protect Branch, HQ3)",
-            "15 (Style)",
-            "16 (Sell Pizzas)",
-            "17 (250.000)",
-            "18 (Bomb Branch, HQ6)",
-            "19 (2 Enemies bankrupt, 2xEnemy)",
-            "20 (Bomb HQ, HQ6)",
-            "21 (5 good Branches)",
-            "22 (Better Personel)",
-            "23 (Moneymaking 50%)",
-            "24 (Louds and Big Shots)",
-            "25 (1 Enemy bankrupt)",
-            "26 (Protectionmoney 40k)",
-            "27 (6 big Branches)",
-            "28 (Protect HQ, HQ6)",
-            "29 (Bomb HQ, HQ6)",
-            "30 (100.000)",
-            "31 (500.000)",
-            "32 (1.000.000)",
-            "33 (2.000.000)",
-            "34 (Moneymaking 75%)",
-            "35 (Moneymaking 80%)",
-            "36 (Marketshare 80%)",
-            "37 (Kids 60%)",
-            "38 (Teens 60%)",
-            "39 (Studies 60%)",
-            "40 (Louds 60%)",
-            "41 (Yuppies 60%)",
-            "42 (Gothics 60%)",
-            "43 (Tourist 60%)"});
-            this.cmbGoal3.Location = new System.Drawing.Point(183, 121);
-            this.cmbGoal3.Name = "cmbGoal3";
-            this.cmbGoal3.Size = new System.Drawing.Size(159, 21);
-            this.cmbGoal3.TabIndex = 168;
             // 
             // frmMain
             // 

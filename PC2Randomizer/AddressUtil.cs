@@ -28,6 +28,7 @@ namespace PC2Randomizer
         public static readonly string[] INCOME_OFFSETS = { "8", "0", "98" };
         public static readonly string[] QUALITY_OFFSETS = { "8", "0", "9C" };
         public static readonly string[] COMFORT_OFFSETS = { "8", "0", "A0" };
+        public static readonly string[] VOLK_OFFSETS = { "8", "0", "54" }; // TODO: Rename me
 
         //Player
         public static string PLAYER_MONEY = NAME_OF_EXE + "+0x17BCD8";

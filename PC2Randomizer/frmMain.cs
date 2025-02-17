@@ -9,6 +9,8 @@ namespace PC2Randomizer
 {
     public partial class frmMain : Form
     {
+        //TODO: Disconnect button
+        //TODO: Setting for having atleast 1 enemy in the game
         const string emptySettingsString = "0;0;0;0;False;0;10;False;False;0;0;10;False;False;0;False;0,10;False;False;False;False;0,10;False;0,10;0,10;0,10;0,10;100;False;0;0;False;False;False;0;0;False;False;False;0;0;0;100;False;False;0;0;False;0;0;False;False;0;0;False;False;0;0;100;False;0;0;False;0;False;0;False;0;0;False;False;False;100;False;0;0;0;0;False;0;False;0;False;False;False;0;0;False;100;False;0;0;0;0;False;0;False;False;0;False;False;False;0;0;100;False;0;0;0;0;False;False;0;False;False;False;False;0;0;0;100;False;0;0;";
 
 
@@ -53,6 +55,7 @@ namespace PC2Randomizer
             oldMoneyself = nmrcMoneySelf.Value;
             oldPopulation = nmrcPopulation.Value;
         }
+
         //This method defaults selection on every Combobox to index 0
         private void fillComboBoxes()
         {
@@ -109,7 +112,7 @@ namespace PC2Randomizer
 
         private void nmrcMoneySelf_ValueChanged(object sender, EventArgs e)
         {
-            if (nmrcMoneySelf.Value % 10 != 0)
+            if (nmrcMoneySelf.Value % 10 != 0) 
             {
                 if (oldMoneyself < nmrcMoneySelf.Value)
                 {
@@ -630,7 +633,10 @@ namespace PC2Randomizer
 
         private void randomizePopulation()
         {
-            if(!chkPopulation.Checked)
+            if(chkPopulation.Checked)
+            {
+                mrmy.WriteMemory(AddressUtil.POPULATION, "int", nmrcPopulation.ToString());
+            } else
             {
                 int n = rng.Next(100, 501);
                 mrmy.WriteMemory(AddressUtil.POPULATION, "int", n.ToString());
@@ -984,8 +990,15 @@ namespace PC2Randomizer
                 return;
             }
             randomizeCityStats();
+            //randomizeVolk(); //TODO: Rename me
             lblInfo.Text = "Game started. Good Luck have fun!";
             tmrIngame.Stop();
+        }
+
+        private void randomizeVolk()
+        {
+            string addressToWrite = getAddressFromPointer(AddressUtil.CITY_STATS, AddressUtil.VOLK_OFFSETS);
+            mrmy.WriteMemory(addressToWrite, "int", "93");
         }
 
         //Having a stat over a certain amount (7, I think) crashes the game
