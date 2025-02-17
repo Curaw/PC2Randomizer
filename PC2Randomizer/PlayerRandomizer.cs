@@ -87,7 +87,7 @@ namespace PC2Randomizer
         {
             if (moneyCheckBox.Checked)
             {
-                mrmy.WriteMemory(moneyAddress, "int", moneyNumericUpDown.Value.ToString()); // TODO: Money is broken. Fixme. Player handicap ingame is from 70 to 990, so we add a zero the values our UI generated
+                mrmy.WriteMemory(moneyAddress, "2bytes", moneyNumericUpDown.Value.ToString()); // TODO: Money is broken. Fixme. Player handicap ingame is from 70 (46 00) to 990 (DE 03), so we add a zero the values our UI generated
             }
             else
             {

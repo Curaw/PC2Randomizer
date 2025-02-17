@@ -1146,12 +1146,12 @@
             // 
             this.nmrcMoneySelf.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneySelf.Maximum = new decimal(new int[] {
-            99,
+            990,
             0,
             0,
             0});
             this.nmrcMoneySelf.Minimum = new decimal(new int[] {
-            7,
+            70,
             0,
             0,
             0});
@@ -1159,7 +1159,7 @@
             this.nmrcMoneySelf.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneySelf.TabIndex = 2;
             this.nmrcMoneySelf.Value = new decimal(new int[] {
-            10,
+            70,
             0,
             0,
             0});
