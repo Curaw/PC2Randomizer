@@ -482,62 +482,68 @@
             // lblMoneySelf
             // 
             this.lblMoneySelf.AutoSize = true;
-            this.lblMoneySelf.Location = new System.Drawing.Point(37, 13);
+            this.lblMoneySelf.Location = new System.Drawing.Point(30, 13);
+            this.lblMoneySelf.MaximumSize = new System.Drawing.Size(45, 0);
             this.lblMoneySelf.Name = "lblMoneySelf";
-            this.lblMoneySelf.Size = new System.Drawing.Size(39, 13);
+            this.lblMoneySelf.Size = new System.Drawing.Size(42, 26);
             this.lblMoneySelf.TabIndex = 16;
-            this.lblMoneySelf.Text = "Money";
-            this.tltpMain.SetToolTip(this.lblMoneySelf, "Your starting money");
+            this.lblMoneySelf.Text = "Money (x2000)";
+            this.tltpMain.SetToolTip(this.lblMoneySelf, "Your starting money x2000");
             // 
             // lblMoneyE1
             // 
             this.lblMoneyE1.AutoSize = true;
-            this.lblMoneyE1.Location = new System.Drawing.Point(37, 13);
+            this.lblMoneyE1.Location = new System.Drawing.Point(30, 13);
+            this.lblMoneyE1.MaximumSize = new System.Drawing.Size(45, 0);
             this.lblMoneyE1.Name = "lblMoneyE1";
-            this.lblMoneyE1.Size = new System.Drawing.Size(39, 13);
+            this.lblMoneyE1.Size = new System.Drawing.Size(42, 26);
             this.lblMoneyE1.TabIndex = 18;
-            this.lblMoneyE1.Text = "Money";
-            this.tltpMain.SetToolTip(this.lblMoneyE1, "Enemy starting money");
+            this.lblMoneyE1.Text = "Money (x2000)";
+            this.tltpMain.SetToolTip(this.lblMoneyE1, "Enemy starting money x2000");
             // 
             // lblMoneyE2
             // 
             this.lblMoneyE2.AutoSize = true;
-            this.lblMoneyE2.Location = new System.Drawing.Point(37, 13);
+            this.lblMoneyE2.Location = new System.Drawing.Point(30, 13);
+            this.lblMoneyE2.MaximumSize = new System.Drawing.Size(45, 0);
             this.lblMoneyE2.Name = "lblMoneyE2";
-            this.lblMoneyE2.Size = new System.Drawing.Size(39, 13);
+            this.lblMoneyE2.Size = new System.Drawing.Size(42, 26);
             this.lblMoneyE2.TabIndex = 20;
-            this.lblMoneyE2.Text = "Money";
-            this.tltpMain.SetToolTip(this.lblMoneyE2, "Enemy starting money");
+            this.lblMoneyE2.Text = "Money (x2000)";
+            this.tltpMain.SetToolTip(this.lblMoneyE2, "Enemy starting money x2000");
             // 
             // lblMoneyE3
             // 
             this.lblMoneyE3.AutoSize = true;
-            this.lblMoneyE3.Location = new System.Drawing.Point(37, 13);
+            this.lblMoneyE3.Location = new System.Drawing.Point(30, 13);
+            this.lblMoneyE3.MaximumSize = new System.Drawing.Size(45, 0);
             this.lblMoneyE3.Name = "lblMoneyE3";
-            this.lblMoneyE3.Size = new System.Drawing.Size(39, 13);
+            this.lblMoneyE3.Size = new System.Drawing.Size(42, 26);
             this.lblMoneyE3.TabIndex = 22;
-            this.lblMoneyE3.Text = "Money";
-            this.tltpMain.SetToolTip(this.lblMoneyE3, "Enemy starting money");
+            this.lblMoneyE3.Text = "Money (x2000)";
+            this.tltpMain.SetToolTip(this.lblMoneyE3, "Enemy starting money x2000");
             // 
             // lblMoneyE4
             // 
             this.lblMoneyE4.AutoSize = true;
-            this.lblMoneyE4.Location = new System.Drawing.Point(37, 13);
+            this.lblMoneyE4.Location = new System.Drawing.Point(30, 13);
+            this.lblMoneyE4.MaximumSize = new System.Drawing.Size(45, 0);
             this.lblMoneyE4.Name = "lblMoneyE4";
-            this.lblMoneyE4.Size = new System.Drawing.Size(39, 13);
+            this.lblMoneyE4.Size = new System.Drawing.Size(42, 26);
             this.lblMoneyE4.TabIndex = 24;
-            this.lblMoneyE4.Text = "Money";
-            this.tltpMain.SetToolTip(this.lblMoneyE4, "Enemy starting money");
+            this.lblMoneyE4.Text = "Money (x2000)";
+            this.tltpMain.SetToolTip(this.lblMoneyE4, "Enemy starting money x2000");
             // 
             // lblMoneyE5
             // 
             this.lblMoneyE5.AutoSize = true;
-            this.lblMoneyE5.Location = new System.Drawing.Point(37, 13);
+            this.lblMoneyE5.Location = new System.Drawing.Point(30, 13);
+            this.lblMoneyE5.MaximumSize = new System.Drawing.Size(45, 0);
             this.lblMoneyE5.Name = "lblMoneyE5";
-            this.lblMoneyE5.Size = new System.Drawing.Size(39, 13);
+            this.lblMoneyE5.Size = new System.Drawing.Size(42, 26);
             this.lblMoneyE5.TabIndex = 26;
-            this.lblMoneyE5.Text = "Money";
-            this.tltpMain.SetToolTip(this.lblMoneyE5, "Enemy starting money");
+            this.lblMoneyE5.Text = "Money (x2000)";
+            this.tltpMain.SetToolTip(this.lblMoneyE5, "Enemy starting money x2000");
             // 
             // lblIconE1
             // 
@@ -1140,12 +1146,12 @@
             // 
             this.nmrcMoneySelf.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneySelf.Maximum = new decimal(new int[] {
-            990,
+            99,
             0,
             0,
             0});
             this.nmrcMoneySelf.Minimum = new decimal(new int[] {
-            70,
+            7,
             0,
             0,
             0});
@@ -1153,22 +1159,21 @@
             this.nmrcMoneySelf.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneySelf.TabIndex = 2;
             this.nmrcMoneySelf.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
-            this.nmrcMoneySelf.ValueChanged += new System.EventHandler(this.nmrcMoneySelf_ValueChanged);
             // 
             // nmrcMoneyE1
             // 
             this.nmrcMoneyE1.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneyE1.Maximum = new decimal(new int[] {
-            990,
+            99,
             0,
             0,
             0});
             this.nmrcMoneyE1.Minimum = new decimal(new int[] {
-            70,
+            7,
             0,
             0,
             0});
@@ -1176,22 +1181,21 @@
             this.nmrcMoneyE1.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneyE1.TabIndex = 2;
             this.nmrcMoneyE1.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
-            this.nmrcMoneyE1.ValueChanged += new System.EventHandler(this.nmrcMoneyE1_ValueChanged);
             // 
             // nmrcMoneyE2
             // 
             this.nmrcMoneyE2.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneyE2.Maximum = new decimal(new int[] {
-            990,
+            99,
             0,
             0,
             0});
             this.nmrcMoneyE2.Minimum = new decimal(new int[] {
-            70,
+            7,
             0,
             0,
             0});
@@ -1199,22 +1203,21 @@
             this.nmrcMoneyE2.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneyE2.TabIndex = 2;
             this.nmrcMoneyE2.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
-            this.nmrcMoneyE2.ValueChanged += new System.EventHandler(this.nmrcMoneyE2_ValueChanged);
             // 
             // nmrcMoneyE3
             // 
             this.nmrcMoneyE3.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneyE3.Maximum = new decimal(new int[] {
-            990,
+            99,
             0,
             0,
             0});
             this.nmrcMoneyE3.Minimum = new decimal(new int[] {
-            70,
+            7,
             0,
             0,
             0});
@@ -1222,22 +1225,21 @@
             this.nmrcMoneyE3.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneyE3.TabIndex = 2;
             this.nmrcMoneyE3.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
-            this.nmrcMoneyE3.ValueChanged += new System.EventHandler(this.nmrcMoneyE3_ValueChanged);
             // 
             // nmrcMoneyE4
             // 
             this.nmrcMoneyE4.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneyE4.Maximum = new decimal(new int[] {
-            990,
+            99,
             0,
             0,
             0});
             this.nmrcMoneyE4.Minimum = new decimal(new int[] {
-            70,
+            7,
             0,
             0,
             0});
@@ -1245,22 +1247,21 @@
             this.nmrcMoneyE4.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneyE4.TabIndex = 2;
             this.nmrcMoneyE4.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
-            this.nmrcMoneyE4.ValueChanged += new System.EventHandler(this.nmrcMoneyE4_ValueChanged);
             // 
             // nmrcMoneyE5
             // 
             this.nmrcMoneyE5.Location = new System.Drawing.Point(78, 11);
             this.nmrcMoneyE5.Maximum = new decimal(new int[] {
-            990,
+            99,
             0,
             0,
             0});
             this.nmrcMoneyE5.Minimum = new decimal(new int[] {
-            70,
+            7,
             0,
             0,
             0});
@@ -1268,11 +1269,10 @@
             this.nmrcMoneyE5.Size = new System.Drawing.Size(48, 20);
             this.nmrcMoneyE5.TabIndex = 2;
             this.nmrcMoneyE5.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
-            this.nmrcMoneyE5.ValueChanged += new System.EventHandler(this.nmrcMoneyE5_ValueChanged);
             // 
             // chkMoneyE1
             // 

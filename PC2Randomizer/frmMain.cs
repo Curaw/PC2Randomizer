@@ -20,7 +20,6 @@ namespace PC2Randomizer
         int PID = 0;
         private readonly Random rng = new Random();
         bool readyToStartGame = false;
-        decimal oldMoneyself;
         decimal oldPopulation;
         int buildingsAndMissions = 0;
         int maxHQ = 0;
@@ -52,7 +51,6 @@ namespace PC2Randomizer
 
         private void memberOldVals()    //Member?
         {
-            oldMoneyself = nmrcMoneySelf.Value;
             oldPopulation = nmrcPopulation.Value;
         }
 
@@ -108,101 +106,6 @@ namespace PC2Randomizer
             Enemy5RNG.setNumerics(nmrcMoneyE5, nmrcEinkaeuferE5, nmrcPolitikerE5, nmrcGangsterE5, nmrcVerkaeuferE5, nmrcFachkraftE5, nmrcWacheE5);
             Enemy5RNG.setAddresses(AddressUtil.ENEMY_5_MONEY, AddressUtil.ENEMY_5_BUYER, AddressUtil.ENEMY_5_POLITICIAN,
     AddressUtil.ENEMY_5_GANGSTER, AddressUtil.ENEMY_5_SELLER, AddressUtil.ENEMY_5_SPECIALIST, AddressUtil.ENEMY_5_GUARD);
-        }
-
-        private void nmrcMoneySelf_ValueChanged(object sender, EventArgs e)
-        {
-            if (nmrcMoneySelf.Value % 10 != 0) 
-            {
-                if (oldMoneyself < nmrcMoneySelf.Value)
-                {
-                    nmrcMoneySelf.Value += 10 - (nmrcMoneySelf.Value % 10);
-                } else
-                {
-                    nmrcMoneySelf.Value -= nmrcMoneySelf.Value % 10;
-                }
-                oldMoneyself = nmrcMoneySelf.Value;
-            }
-        }
-
-        private void nmrcMoneyE1_ValueChanged(object sender, EventArgs e)
-        {
-            if (nmrcMoneyE1.Value % 10 != 0)
-            {
-                if (oldMoneyself < nmrcMoneyE1.Value)
-                {
-                    nmrcMoneyE1.Value += 10 - (nmrcMoneyE1.Value % 10);
-                }
-                else
-                {
-                    nmrcMoneyE1.Value -= nmrcMoneyE1.Value % 10;
-                }
-                oldMoneyself = nmrcMoneyE1.Value;
-            }
-        }
-
-        private void nmrcMoneyE2_ValueChanged(object sender, EventArgs e)
-        {
-            if (nmrcMoneyE2.Value % 10 != 0)
-            {
-                if (oldMoneyself < nmrcMoneyE2.Value)
-                {
-                    nmrcMoneyE2.Value += 10 - (nmrcMoneyE2.Value % 10);
-                }
-                else
-                {
-                    nmrcMoneyE2.Value -= nmrcMoneyE2.Value % 10;
-                }
-                oldMoneyself = nmrcMoneyE2.Value;
-            }
-        }
-
-        private void nmrcMoneyE3_ValueChanged(object sender, EventArgs e)
-        {
-            if (nmrcMoneyE3.Value % 10 != 0)
-            {
-                if (oldMoneyself < nmrcMoneyE3.Value)
-                {
-                    nmrcMoneyE3.Value += 10 - (nmrcMoneyE3.Value % 10);
-                }
-                else
-                {
-                    nmrcMoneyE3.Value -= nmrcMoneyE3.Value % 10;
-                }
-                oldMoneyself = nmrcMoneyE3.Value;
-            }
-        }
-
-        private void nmrcMoneyE4_ValueChanged(object sender, EventArgs e)
-        {
-            if (nmrcMoneyE4.Value % 10 != 0)
-            {
-                if (oldMoneyself < nmrcMoneyE4.Value)
-                {
-                    nmrcMoneyE4.Value += 10 - (nmrcMoneyE4.Value % 10);
-                }
-                else
-                {
-                    nmrcMoneyE4.Value -= nmrcMoneyE4.Value % 10;
-                }
-                oldMoneyself = nmrcMoneyE4.Value;
-            }
-        }
-
-        private void nmrcMoneyE5_ValueChanged(object sender, EventArgs e)
-        {
-            if (nmrcMoneyE5.Value % 10 != 0)
-            {
-                if (oldMoneyself < nmrcMoneyE5.Value)
-                {
-                    nmrcMoneyE5.Value += 10 - (nmrcMoneyE5.Value % 10);
-                }
-                else
-                {
-                    nmrcMoneyE5.Value -= nmrcMoneyE5.Value % 10;
-                }
-                oldMoneyself = nmrcMoneyE5.Value;
-            }
         }
 
         //This hooks itself onto the process named "fastfood2" and starts our freegame-timer
