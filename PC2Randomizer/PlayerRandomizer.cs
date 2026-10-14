@@ -1,5 +1,6 @@
 ﻿using Memory;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PC2Randomizer
@@ -8,8 +9,8 @@ namespace PC2Randomizer
     {
         private const Int32 MIN_RANDOM_STAT_RANGE = -6;
         private const Int32 MAX_RANDOM_STAT_RANGE = 7; // Exclusive
-        private const Int32 MIN_RANDOM_MONEY_RANGE = 70;
-        private const Int32 MAX_RANDOM_MONEY_RANGE = 991; // Exclusive
+        private const Int32 MIN_RANDOM_MONEY_RANGE = 7;
+        private const Int32 MAX_RANDOM_MONEY_RANGE = 100; // Exclusive
 
         private Mem mrmy;
         private readonly Random rng;
@@ -83,16 +84,22 @@ namespace PC2Randomizer
             this.guardAddress = guard;
         }
 
+        // Money is getting a factor for each difficulty:
+        // handicap * {5000, 2000, 1000, 750, 500, 400, 300, 250, 220, 200}
+        // Player handicap ingame is from 70 (46 00) to 990 (DE 03),
+        // so we add a zero the values our UI generated
         public void randomizeMoney()
         {
             if (moneyCheckBox.Checked)
             {
-                mrmy.WriteMemory(moneyAddress, "2bytes", moneyNumericUpDown.Value.ToString()); // TODO: Money is broken. Fixme. Player handicap ingame is from 70 (46 00) to 990 (DE 03), so we add a zero the values our UI generated
+                Console.WriteLine(moneyNumericUpDown.Value.ToString() + "0");
+                mrmy.WriteMemory(moneyAddress, "int", moneyNumericUpDown.Value.ToString() + "0");
             }
             else
             {
                 int n = rng.Next(MIN_RANDOM_MONEY_RANGE, MAX_RANDOM_MONEY_RANGE);
-                mrmy.WriteMemory(moneyAddress, "int", n.ToString());
+                Console.WriteLine(n.ToString() + "0");
+                mrmy.WriteMemory(moneyAddress, "int", n.ToString() + "0");
             }
         }
 
